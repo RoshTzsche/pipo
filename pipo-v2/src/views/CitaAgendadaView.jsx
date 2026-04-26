@@ -51,10 +51,16 @@ export default function CitaAgendadaView() {
   const cells = buildCalendar(year, month)
 
   return (
-    <div className="relative min-h-full w-full flex flex-col bg-[#ECF9FF] overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col bg-[#ECF9FF] overflow-hidden">
       <TalaveraPattern opacity={0.04} />
-      <TalaveraCorner position="top-left" size={130} />
-      <TalaveraCorner position="top-right" size={130} />
+      <div className="hidden sm:block">
+        <TalaveraCorner position="top-left" size={130} />
+        <TalaveraCorner position="top-right" size={130} />
+      </div>
+      <div className="sm:hidden">
+        <TalaveraCorner position="top-left" size={90} />
+        <TalaveraCorner position="top-right" size={90} />
+      </div>
 
       {/* Logo small esquina */}
       <div className="absolute top-4 left-4 z-10 flex items-center gap-1">
@@ -62,22 +68,22 @@ export default function CitaAgendadaView() {
       </div>
 
       {/* Título */}
-      <div className="relative z-10 pt-32 px-6 text-center">
-        <h1 className="font-display font-black text-[#080869] text-3xl md:text-4xl italic leading-tight">
+      <div className="relative z-10 pt-20 sm:pt-28 md:pt-32 px-4 sm:px-6 text-center">
+        <h1 className="font-display font-black text-[#080869] text-2xl sm:text-3xl md:text-4xl italic leading-tight">
           ¡He agendado una<br/>cita para ti!
         </h1>
       </div>
 
       {/* Calendario */}
-      <div className="relative z-10 mx-4 mt-6 dashed-talavera p-4 bg-[#ECF9FF] animate-slideUp">
+      <div className="relative z-10 mx-3 sm:mx-4 mt-5 sm:mt-6 dashed-talavera p-3 sm:p-4 bg-[#ECF9FF] animate-slideUp">
         {/* Patrón sutil dentro del calendario */}
         <div className="absolute inset-0 opacity-[0.06] pointer-events-none rounded-3xl overflow-hidden">
           <TalaveraPattern opacity={0.5} />
         </div>
 
         {/* Header del calendario */}
-        <div className="relative bg-white border-2 border-[#E6A231] rounded-2xl px-4 py-2 mb-3 shadow-[2px_2px_0px_rgba(230,162,49,0.4)]">
-          <p className="font-display text-2xl text-[#080869] text-center italic font-bold">
+        <div className="relative bg-white border-2 border-[#E6A231] rounded-2xl px-3 sm:px-4 py-2 mb-3 shadow-[2px_2px_0px_rgba(230,162,49,0.4)]">
+          <p className="font-display text-xl sm:text-2xl text-[#080869] text-center italic font-bold">
             {MESES[month]}
           </p>
         </div>
@@ -85,20 +91,20 @@ export default function CitaAgendadaView() {
         {/* Días de la semana */}
         <div className="relative grid grid-cols-7 gap-1 mb-2">
           {DIAS_SEMANA.map((d, i) => (
-            <div key={i} className="text-center text-xs font-bold text-[#080869]/50 py-1">
+            <div key={i} className="text-center text-[10px] sm:text-xs font-bold text-[#080869]/50 py-1">
               {d}
             </div>
           ))}
         </div>
 
         {/* Celdas */}
-        <div className="relative grid grid-cols-7 gap-1">
+        <div className="relative grid grid-cols-7 gap-0.5 sm:gap-1">
           {cells.map((cell, i) => {
             const isCita = cell.current && cell.day === day
             return (
               <div
                 key={i}
-                className={`relative aspect-square flex items-center justify-center text-sm font-display font-bold ${
+                className={`relative aspect-square flex items-center justify-center text-xs sm:text-sm font-display font-bold ${
                   !cell.current
                     ? 'text-[#080869]/20'
                     : cell.weekend
@@ -134,21 +140,21 @@ export default function CitaAgendadaView() {
       </div>
 
       {/* Botón Detalles */}
-      <div className="relative z-10 mx-4 mt-5">
+      <div className="relative z-10 mx-3 sm:mx-4 mt-4 sm:mt-5">
         <button
           onClick={() => setQrModalOpen(true)}
-          className="w-full bg-white border-[3px] border-[#080869] rounded-full py-4 px-6 font-display font-bold italic text-[#080869] text-xl shadow-[4px_4px_0px_#E6A231] hover:translate-y-1 hover:shadow-none transition-all"
+          className="w-full bg-white border-[3px] border-[#080869] rounded-full py-3 sm:py-4 px-4 sm:px-6 font-display font-bold italic text-[#080869] text-base sm:text-xl shadow-[4px_4px_0px_#E6A231] hover:translate-y-1 hover:shadow-none transition-all"
         >
           ¡Detalles de tu cita!
         </button>
       </div>
 
       {/* Pipo + texto inferior */}
-      <div className="relative z-10 mt-6 mb-4 px-4 flex items-end justify-between gap-3">
-        <div className="w-32 md:w-40 animate-float">
+      <div className="relative z-10 mt-4 sm:mt-6 mb-4 px-3 sm:px-4 flex items-end justify-between gap-3">
+        <div className="w-24 sm:w-32 md:w-40 animate-float shrink-0">
           <PipoMascot variant="flying" className="w-full h-auto" />
         </div>
-        <p className="font-display italic text-[#080869] text-base md:text-lg flex-1 text-right max-w-[180px] leading-snug">
+        <p className="font-display italic text-[#080869] text-sm sm:text-base md:text-lg flex-1 text-right max-w-[180px] leading-snug">
           Revisa todo<br/>
           sobre tu<br/>
           próxima cita…

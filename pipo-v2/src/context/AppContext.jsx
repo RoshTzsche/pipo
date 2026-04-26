@@ -1,6 +1,13 @@
-import React, { createContext, useContext, useState, useCallback } from 'react'
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react'
 
 const AppContext = createContext(null)
+
+// Mapa de escalas de fuente
+const FONT_SCALE_MAP = {
+  normal: 1,
+  grande: 1.15,
+  'extra-grande': 1.3
+}
 
 export function AppProvider({ children }) {
   const [currentView, setCurrentView] = useState('splash')
@@ -10,6 +17,17 @@ export function AppProvider({ children }) {
   const [expediente, setExpediente] = useState(null)
   const [cita, setCita] = useState(null)
   const [historialExpedientes, setHistorialExpedientes] = useState([])
+
+  // === AJUSTES DE ACCESIBILIDAD ===
+  const [fontSize, setFontSize] = useState('normal')          // 'normal' | 'grande' | 'extra-grande'
+  const [colorBlindMode, setColorBlindMode] = useState('ninguno') // 'ninguno' | 'protanopia' | 'deuteranopia' | 'tritanopia'
+  const [highContrast, setHighContrast] = useState(false)
+
+  // Aplicamos la escala de fuente como variable CSS al :root
+  useEffect(() => {
+    const scale = FONT_SCALE_MAP[fontSize] || 1
+    document.documentElement.style.setProperty('--font-scale', String(scale))
+  }, [fontSize])
 
   const addExpediente = useCallback((nuevo) => {
     const expedienteConId = {
@@ -65,7 +83,11 @@ export function AppProvider({ children }) {
     cita, setCita,
     historialExpedientes,
     addExpediente,
-    intentarAgendarCita
+    intentarAgendarCita,
+    // Accesibilidad
+    fontSize, setFontSize,
+    colorBlindMode, setColorBlindMode,
+    highContrast, setHighContrast
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

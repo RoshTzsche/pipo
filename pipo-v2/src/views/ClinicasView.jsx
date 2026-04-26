@@ -112,19 +112,25 @@ export default function ClinicasView() {
   }, [clinicasOrdenadas])
 
   return (
-    <div className="relative min-h-full w-full flex flex-col bg-[#ECF9FF] overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col bg-[#ECF9FF] overflow-hidden">
       <TalaveraPattern opacity={0.04} />
-      <TalaveraCorner position="top-left" size={130} />
-      <TalaveraCorner position="top-right" size={130} />
+      <div className="hidden sm:block">
+        <TalaveraCorner position="top-left" size={130} />
+        <TalaveraCorner position="top-right" size={130} />
+      </div>
+      <div className="sm:hidden">
+        <TalaveraCorner position="top-left" size={90} />
+        <TalaveraCorner position="top-right" size={90} />
+      </div>
 
-      <div className="relative z-10 pt-32 pb-2 px-6 flex items-center gap-2">
+      <div className="relative z-10 pt-20 sm:pt-28 md:pt-32 pb-2 px-4 sm:px-6 flex items-center gap-2">
         <span className="inline-block w-2 h-2 bg-[#080869] rounded-full" />
-        <h1 className="font-display font-black text-[#080869] text-3xl md:text-4xl italic">
+        <h1 className="font-display font-black text-[#080869] text-2xl sm:text-3xl md:text-4xl italic">
           Red de Salud
         </h1>
       </div>
 
-      <div className="relative z-10 mx-4 mt-3 h-[240px] md:h-[280px] rounded-3xl border-[3px] border-[#8B1538] shadow-[4px_4px_0px_#080869] overflow-hidden">
+      <div className="relative z-10 mx-3 sm:mx-4 mt-2 sm:mt-3 h-[200px] sm:h-[240px] md:h-[280px] rounded-3xl border-[3px] border-[#8B1538] shadow-[4px_4px_0px_#080869] overflow-hidden">
         <MapContainer center={[19.0414, -98.2063]} zoom={13} style={{ height: '100%', width: '100%' }}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {mapCenter && <MapController center={mapCenter} />}
@@ -142,8 +148,8 @@ export default function ClinicasView() {
         </MapContainer>
       </div>
 
-      <div className="relative z-10 mt-6 px-5 flex flex-col gap-1">
-        <h2 className="font-display italic font-bold text-[#080869] text-lg">
+      <div className="relative z-10 mt-5 sm:mt-6 px-4 sm:px-5 flex flex-col gap-1">
+        <h2 className="font-display italic font-bold text-[#080869] text-base sm:text-lg">
           Unidades en {expediente?.paciente?.municipio || 'Puebla'}
         </h2>
         <p className="text-[10px] text-[#080869]/50 font-medium flex items-center gap-1 uppercase tracking-wider">
@@ -151,7 +157,7 @@ export default function ClinicasView() {
         </p>
       </div>
 
-      <div className="relative z-10 flex-1 overflow-y-auto px-4 pb-6 pt-3 space-y-4">
+      <div className="relative z-10 flex-1 px-3 sm:px-4 pb-6 pt-3 space-y-4">
         {clinicasOrdenadas.map((c) => (
           <ClinicaCard
             key={c.id}
@@ -181,14 +187,21 @@ function ClinicaCard({ clinica, isSelected, recomendacionMedica, onSelect }) {
   return (
     <div className="relative flex flex-col">
       {clinica.esRecomendada && (
-        <div className="mb-3 ml-2 mr-4 animate-slideUp">
-          <div className="bg-[#080869] text-white p-4 rounded-2xl rounded-bl-none shadow-lg border-b-4 border-[#E6A231]">
-            <div className="flex gap-3 items-start">
+        <div className="mb-3 ml-1 sm:ml-2 mr-2 sm:mr-4 animate-slideUp">
+          <div className="bg-[#080869] text-white p-3 sm:p-4 rounded-2xl rounded-bl-none shadow-lg border-b-4 border-[#E6A231]">
+            <div className="flex gap-2 sm:gap-3 items-start">
               <Sparkles className="w-5 h-5 text-[#E6A231] shrink-0 mt-0.5" />
-              <div className="space-y-1">
+              <div className="space-y-1 min-w-0">
                 <p className="text-[10px] font-black uppercase tracking-widest text-[#E6A231]">Pipo recomienda:</p>
-                <p className="text-sm font-medium leading-relaxed italic">"{recomendacionMedica}"</p>
+                <p className="text-xs sm:text-sm font-medium leading-relaxed italic">"{recomendacionMedica}"</p>
               </div>
+            </div>
+            {/* Disclaimer IA */}
+            <div className="mt-3 pt-3 border-t border-white/15 flex items-start gap-1.5">
+              <Info className="w-3 h-3 text-[#E6A231] shrink-0 mt-0.5" strokeWidth={2.5} />
+              <p className="text-[10px] sm:text-[11px] text-white/70 leading-snug">
+                Esta es una sugerencia generada por IA con base en datos públicos. No reemplaza el criterio médico. Para casos delicados, busca siempre atención personalizada con un profesional de la salud.
+              </p>
             </div>
           </div>
         </div>
@@ -208,37 +221,37 @@ function ClinicaCard({ clinica, isSelected, recomendacionMedica, onSelect }) {
           <TalaveraPattern opacity={1} />
         </div>
 
-        <div className="relative p-5">
-          <div className="flex justify-between items-start mb-2">
-            <div className="flex gap-3 min-w-0">
+        <div className="relative p-4 sm:p-5">
+          <div className="flex justify-between items-start mb-2 gap-2">
+            <div className="flex gap-2 sm:gap-3 min-w-0 flex-1">
               <div className={`p-2 rounded-xl shrink-0 ${clinica.esRecomendada ? 'bg-[#E6A231]/10' : 'bg-[#ECF9FF]'}`}>
                 <Building2 className={`w-5 h-5 ${clinica.esRecomendada ? 'text-[#E6A231]' : 'text-[#080869]'}`} />
               </div>
-              <div className="min-w-0">
-                <h3 className="font-display font-black italic text-[#080869] text-xl leading-tight truncate">
+              <div className="min-w-0 flex-1">
+                <h3 className="font-display font-black italic text-[#080869] text-lg sm:text-xl leading-tight break-words">
                   {clinica.nombre}
                 </h3>
-                <p className="text-[11px] text-[#080869]/60 font-medium truncate">{clinica.direccion}</p>
+                <p className="text-[10px] sm:text-[11px] text-[#080869]/60 font-medium break-words">{clinica.direccion}</p>
               </div>
             </div>
-            {clinica.esRecomendada && <Star className="w-5 h-5 text-[#E6A231] fill-current" />}
+            {clinica.esRecomendada && <Star className="w-5 h-5 text-[#E6A231] fill-current shrink-0" />}
           </div>
 
-          <div className="flex items-center gap-4 mt-4">
-            <div className="flex-1 bg-[#ECF9FF] border-2 border-[#080869]/5 rounded-2xl p-3">
+          <div className="flex items-center gap-2 sm:gap-4 mt-4">
+            <div className="flex-1 min-w-0 bg-[#ECF9FF] border-2 border-[#080869]/5 rounded-2xl p-2 sm:p-3">
               <p className="text-[9px] uppercase font-bold text-[#080869]/50 tracking-widest mb-1">Espera Urgencias</p>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#E6A231]" />
-                <span className="font-display font-black text-[#080869] text-lg">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Clock className="w-4 h-4 text-[#E6A231] shrink-0" />
+                <span className="font-display font-black text-[#080869] text-base sm:text-lg">
                   {clinica.tiempos_espera?.urgencias_min || '--'} min
                 </span>
               </div>
             </div>
-            <div className="flex-1 bg-[#ECF9FF] border-2 border-[#080869]/5 rounded-2xl p-3">
+            <div className="flex-1 min-w-0 bg-[#ECF9FF] border-2 border-[#080869]/5 rounded-2xl p-2 sm:p-3">
               <p className="text-[9px] uppercase font-bold text-[#080869]/50 tracking-widest mb-1">Ocupación</p>
-              <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4" style={{ color: info.color }} />
-                <span className="font-display font-bold text-[#080869]">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Activity className="w-4 h-4 shrink-0" style={{ color: info.color }} />
+                <span className="font-display font-bold text-[#080869] text-sm sm:text-base">
                   {info.label}
                 </span>
               </div>
@@ -251,7 +264,7 @@ function ClinicaCard({ clinica, isSelected, recomendacionMedica, onSelect }) {
                 <p className="text-[10px] font-bold text-[#080869]/40 uppercase mb-2">Equipamiento y Servicios</p>
                 <div className="flex flex-wrap gap-2">
                   {clinica.equipamiento?.map((item, i) => (
-                    <span key={i} className="bg-white border-2 border-[#080869]/10 text-[#080869] px-3 py-1 rounded-full text-[10px] font-bold">
+                    <span key={i} className="bg-white border-2 border-[#080869]/10 text-[#080869] px-2.5 sm:px-3 py-1 rounded-full text-[10px] font-bold">
                       {item.replace('_', ' ')}
                     </span>
                   ))}
@@ -259,17 +272,17 @@ function ClinicaCard({ clinica, isSelected, recomendacionMedica, onSelect }) {
               </div>
 
               {clinica.contacto && (
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[#080869]">
-                    <Phone className="w-4 h-4" />
-                    <span className="text-sm font-bold">{clinica.contacto.telefono}</span>
+                <div className="flex items-center justify-between gap-2 flex-wrap">
+                  <div className="flex items-center gap-2 text-[#080869] min-w-0">
+                    <Phone className="w-4 h-4 shrink-0" />
+                    <span className="text-xs sm:text-sm font-bold truncate">{clinica.contacto.telefono}</span>
                   </div>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(`https://www.google.com/maps?q=${clinica.coordenadas.lat},${clinica.coordenadas.lng}`);
                     }}
-                    className="bg-[#080869] text-white rounded-full py-2 px-5 font-display italic font-bold text-xs flex items-center gap-2 shadow-lg"
+                    className="bg-[#080869] text-white rounded-full py-2 px-4 sm:px-5 font-display italic font-bold text-xs flex items-center gap-2 shadow-lg shrink-0"
                   >
                     <Navigation className="w-3 h-3" /> Ir ahora
                   </button>
@@ -281,6 +294,11 @@ function ClinicaCard({ clinica, isSelected, recomendacionMedica, onSelect }) {
                   "{clinica.notas}"
                 </p>
               )}
+
+              {/* Disclaimer general en cada tarjeta expandida */}
+              <p className="text-[10px] text-[#080869]/50 italic leading-snug border-t border-dashed border-[#080869]/10 pt-2">
+                Información orientativa generada con apoyo de IA. Verifica siempre con personal médico.
+              </p>
             </div>
           )}
 
