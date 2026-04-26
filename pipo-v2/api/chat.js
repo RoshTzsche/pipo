@@ -54,20 +54,25 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'No se recibieron mensajes' })
   }
 
-  const systemPromptTriaje = `Eres Pipo, un Especialista de Triaje de Puebla.
-1. Sé empático y averigua: nombre, edad, sexo, municipio y síntomas.
-2. MIENTRAS recolectas datos, responde en texto natural.
-CUANDO TENGAS TODOS LOS DATOS, tu respuesta DEBE ser ÚNICAMENTE un objeto JSON, sin texto adicional, con esta estructura exacta:
+  const systemPromptTriaje = `Eres un Especialista de Triaje empático y profesional en salud pública de Puebla.
+
+INSTRUCCIONES:
+1. Sé empático y recopila: nombre, edad, sexo, municipio y síntomas.
+2. Responde SIEMPRE en texto natural mientras recolectas datos. NUNCA muestres JSON al usuario.
+3. NUNCA MUESTRES TUS PENSAMIENTOS
+REGLA MÁXIMA DE CIERRE:
+Cuando tengas TODOS los datos, genera ÚNICAMENTE este JSON. ESTÁ ESTRICTAMENTE PROHIBIDO decir "Perfecto", "Aquí tienes", o usar formato Markdown.
 {
   "status": "finalizado",
   "expediente": {
-    "paciente": {"nombre": "...", "edad": 0, "municipio": "...", "sexo": "..."},
-    "clinico": {"sintoma": "...", "evolucion": "...", "categoria": "URGENTE/MODERADO/LEVE"},
-    "insight_puebla": "Advertencia médica basada en Puebla"
+    "paciente": {"nombre": "", "edad": 0, "municipio": "", "sexo": ""},
+    "clinico": {"sintoma": "", "evolucion": "", "categoria": ""},
+    "insight_puebla": "[REEMPLAZA ESTE TEXTO con una advertencia médica real basada en el CONTEXTO EPIDEMIOLÓGICO de arriba, mencionando el Popocatépetl si aplica]",
+    "prioridad_num": 1
   }
-}
-NUNCA MUESTRES JSON EN TUS RESPUESTAS.
-`
+}`
+
+
 
   try {
     const chatCompletion = await groq.chat.completions.create({
@@ -79,6 +84,11 @@ NUNCA MUESTRES JSON EN TUS RESPUESTAS.
     let rawContent = chatCompletion.choices[0].message.content
     let cleanedContent = rawContent.replace(/```json/g, '').replace(/```/g, '').trim()
 
+    // Extraer SOLO el primer objeto JSON válido encontrado
+    const jsonMatch = cleanedContent.match(/\{[\s\S]*"status"[\s\S]*"finalizado"[\s\S]*\}/)
+    if (jsonMatch) {
+      cleanedContent = jsonMatch[0]
+    }
     if (cleanedContent.startsWith('{') && cleanedContent.endsWith('}')) {
       try {
         const parsedObject = JSON.parse(cleanedContent)
@@ -89,7 +99,7 @@ NUNCA MUESTRES JSON EN TUS RESPUESTAS.
             parsedObject.expediente.clinico.categoria
           )
 
-          const systemPromptAsignacion = `Eres el Director Médico VIP de Puebla y sistema experto de triaje.
+          const systemPromptAsignacion = `Eres el Director Médico de Puebla y sistema experto de triaje.
 Se te entrega un expediente médico y una base de conocimiento reducida (Top 3 clínicas pre-filtradas para este caso).
 Elige la mejor opción para el paciente basándote en su categoría de riesgo, el equipamiento de la clínica y muy importante: el tiempo de espera estimado ('tiempos_espera').
 

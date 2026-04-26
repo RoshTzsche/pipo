@@ -8,7 +8,7 @@ const WELCOME_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
   content:
-    '¡Hola! Soy Pipo. Dime, ¿para qué especialidad buscas cita o qué molestias tienes hoy? Yo me encargo de encontrarte un lugar rápido.'
+    '¡Hola! Soy Pipo. Dime tu nombre, edad, género, municipio y sintomas para que te pueda ayudar.'
 }
 
 // Detecta soporte de SpeechRecognition
