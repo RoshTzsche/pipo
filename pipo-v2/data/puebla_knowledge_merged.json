@@ -1,0 +1,2260 @@
+{
+  "mortalidad_puebla_2024": {
+    "mujeres_15_34": [
+      {
+        "causa": "Accidentes",
+        "defunciones": 510
+      },
+      {
+        "causa": "De tráfico de vehículos de motor",
+        "defunciones": 300
+      },
+      {
+        "causa": "Tumores malignos",
+        "defunciones": 470
+      },
+      {
+        "causa": "Leucemias",
+        "defunciones": 230
+      },
+      {
+        "causa": "Lesiones autoinfligidas intencionalmente",
+        "defunciones": 310
+      },
+      {
+        "causa": "Enfermedades del corazón  c/",
+        "defunciones": 210
+      },
+      {
+        "causa": "Infarto agudo del miocardio",
+        "defunciones": 140
+      },
+      {
+        "causa": "Agresiones",
+        "defunciones": 180
+      },
+      {
+        "causa": "Malformaciones congénitas, deformidades y anomalías cromosómicas",
+        "defunciones": 130
+      },
+      {
+        "causa": "Malformaciones congénitas del sistema circulatorio",
+        "defunciones": 50
+      },
+      {
+        "causa": "Diabetes mellitus",
+        "defunciones": 120
+      },
+      {
+        "causa": "Enfermedades cerebrovasculares",
+        "defunciones": 120
+      },
+      {
+        "causa": "Influenza y neumonía",
+        "defunciones": 90
+      },
+      {
+        "causa": "Parálisis cerebral y otros síndromes paralíticos",
+        "defunciones": 80
+      },
+      {
+        "causa": "Enfermedades del hígado",
+        "defunciones": 50
+      }
+    ],
+    "mujeres_35_64": [
+      {
+        "causa": "Tumores malignos",
+        "defunciones": 1880
+      },
+      {
+        "causa": "Del cuello del útero",
+        "defunciones": 520
+      },
+      {
+        "causa": "Diabetes mellitus",
+        "defunciones": 1200
+      },
+      {
+        "causa": "Enfermedades del corazón  c/",
+        "defunciones": 760
+      },
+      {
+        "causa": "Infarto agudo del miocardio",
+        "defunciones": 470
+      },
+      {
+        "causa": "Enfermedades del hígado",
+        "defunciones": 390
+      },
+      {
+        "causa": "Enfermedad alcohólica del hígado",
+        "defunciones": 70
+      },
+      {
+        "causa": "Accidentes",
+        "defunciones": 390
+      },
+      {
+        "causa": "De tráfico de vehículos de motor",
+        "defunciones": 260
+      },
+      {
+        "causa": "Agresiones",
+        "defunciones": 240
+      }
+    ],
+    "mujeres_65_mas": [
+      {
+        "causa": "Enfermedades del corazón  c/",
+        "defunciones": 4477
+      },
+      {
+        "causa": "Infarto agudo del miocardio",
+        "defunciones": 3231
+      },
+      {
+        "causa": "Diabetes mellitus",
+        "defunciones": 2463
+      },
+      {
+        "causa": "Tumores malignos",
+        "defunciones": 1162
+      },
+      {
+        "causa": "Del hígado y de las vías biliares intrahepáticas",
+        "defunciones": 143
+      },
+      {
+        "causa": "De la mama",
+        "defunciones": 122
+      },
+      {
+        "causa": "Del estómago",
+        "defunciones": 93
+      },
+      {
+        "causa": "Enfermedades cerebrovasculares",
+        "defunciones": 844
+      },
+      {
+        "causa": "Enfermedades pulmonares obstructivas crónicas",
+        "defunciones": 504
+      },
+      {
+        "causa": "Influenza y neumonía",
+        "defunciones": 457
+      }
+    ],
+    "hombres_15_34": [
+      {
+        "causa": "Accidentes",
+        "defunciones": 3270
+      },
+      {
+        "causa": "De tráfico de vehículos de motor",
+        "defunciones": 1810
+      },
+      {
+        "causa": "Agresiones",
+        "defunciones": 1630
+      },
+      {
+        "causa": "Lesiones autoinfligidas intencionalmente",
+        "defunciones": 810
+      },
+      {
+        "causa": "Tumores malignos",
+        "defunciones": 640
+      },
+      {
+        "causa": "Leucemias",
+        "defunciones": 260
+      },
+      {
+        "causa": "Enfermedades del corazón  c/",
+        "defunciones": 370
+      },
+      {
+        "causa": "Infarto agudo del miocardio",
+        "defunciones": 260
+      },
+      {
+        "causa": "Diabetes mellitus",
+        "defunciones": 180
+      },
+      {
+        "causa": "Influenza y neumonía",
+        "defunciones": 170
+      },
+      {
+        "causa": "Malformaciones congénitas, deformidades y anomalías cromosómicas",
+        "defunciones": 160
+      },
+      {
+        "causa": "Malformaciones congénitas del sistema circulatorio",
+        "defunciones": 100
+      },
+      {
+        "causa": "Parálisis cerebral y otros síndromes paralíticos",
+        "defunciones": 150
+      },
+      {
+        "causa": "Enfermedad por virus de la inmunodeficiencia humana",
+        "defunciones": 140
+      },
+      {
+        "causa": "Enfermedades del hígado",
+        "defunciones": 140
+      }
+    ],
+    "hombres_35_64": [
+      {
+        "causa": "Enfermedades del hígado",
+        "defunciones": 306
+      },
+      {
+        "causa": "Enfermedad alcohólica del hígado",
+        "defunciones": 157
+      },
+      {
+        "causa": "Agresiones",
+        "defunciones": 210
+      },
+      {
+        "causa": "Accidentes",
+        "defunciones": 201
+      },
+      {
+        "causa": "De tráfico de vehículos de motor",
+        "defunciones": 105
+      },
+      {
+        "causa": "Enfermedades del corazón  c/",
+        "defunciones": 193
+      },
+      {
+        "causa": "Infarto agudo del miocardio",
+        "defunciones": 129
+      },
+      {
+        "causa": "Diabetes mellitus",
+        "defunciones": 156
+      },
+      {
+        "causa": "Tumores malignos",
+        "defunciones": 100
+      },
+      {
+        "causa": "Del estómago",
+        "defunciones": 17
+      },
+      {
+        "causa": "Leucemias",
+        "defunciones": 16
+      },
+      {
+        "causa": "Lesiones autoinfligidas intencionalmente",
+        "defunciones": 61
+      },
+      {
+        "causa": "Enfermedades cerebrovasculares",
+        "defunciones": 46
+      },
+      {
+        "causa": "Influenza y neumonía",
+        "defunciones": 46
+      },
+      {
+        "causa": "Enfermedad por virus de la inmunodeficiencia humana",
+        "defunciones": 39
+      }
+    ],
+    "hombres_65_mas": [
+      {
+        "causa": "Enfermedades del corazón  c/",
+        "defunciones": 3762
+      },
+      {
+        "causa": "Infarto agudo del miocardio",
+        "defunciones": 2854
+      },
+      {
+        "causa": "Diabetes mellitus",
+        "defunciones": 1936
+      },
+      {
+        "causa": "Tumores malignos",
+        "defunciones": 1131
+      },
+      {
+        "causa": "De la próstata",
+        "defunciones": 279
+      },
+      {
+        "causa": "Del estómago",
+        "defunciones": 104
+      },
+      {
+        "causa": "Enfermedades del hígado",
+        "defunciones": 740
+      },
+      {
+        "causa": "Enfermedad alcohólica del hígado",
+        "defunciones": 279
+      },
+      {
+        "causa": "Enfermedades cerebrovasculares",
+        "defunciones": 673
+      },
+      {
+        "causa": "Influenza y neumonía",
+        "defunciones": 417
+      },
+      {
+        "causa": "Enfermedades pulmonares obstructivas crónicas",
+        "defunciones": 356
+      },
+      {
+        "causa": "Insuficiencia renal",
+        "defunciones": 296
+      },
+      {
+        "causa": "Accidentes",
+        "defunciones": 222
+      },
+      {
+        "causa": "De tráfico de vehículos de motor",
+        "defunciones": 57
+      },
+      {
+        "causa": "Caídas",
+        "defunciones": 21
+      }
+    ]
+  },
+  "riesgo_por_municipio": [
+    {
+      "municipio": "Tepango de Rodríguez",
+      "riesgo_atencion": 7.045,
+      "total": 44,
+      "sin_atencion": 310
+    },
+    {
+      "municipio": "Amixtlán",
+      "riesgo_atencion": 5.957,
+      "total": 47,
+      "sin_atencion": 280
+    },
+    {
+      "municipio": "Cohuecan",
+      "riesgo_atencion": 4.792,
+      "total": 48,
+      "sin_atencion": 230
+    },
+    {
+      "municipio": "Axutla",
+      "riesgo_atencion": 4.706,
+      "total": 17,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "Chila de la Sal",
+      "riesgo_atencion": 4.545,
+      "total": 11,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "San Martín Totoltepec",
+      "riesgo_atencion": 4.444,
+      "total": 9,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Aljojuca",
+      "riesgo_atencion": 4.423,
+      "total": 52,
+      "sin_atencion": 230
+    },
+    {
+      "municipio": "Xayacatlán de Bravo",
+      "riesgo_atencion": 3.6,
+      "total": 25,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Tepeyahualco",
+      "riesgo_atencion": 3.504,
+      "total": 117,
+      "sin_atencion": 410
+    },
+    {
+      "municipio": "Zoquitlán",
+      "riesgo_atencion": 3.49,
+      "total": 149,
+      "sin_atencion": 520
+    },
+    {
+      "municipio": "Tlaltenango",
+      "riesgo_atencion": 3.333,
+      "total": 39,
+      "sin_atencion": 130
+    },
+    {
+      "municipio": "Quecholac",
+      "riesgo_atencion": 3.271,
+      "total": 269,
+      "sin_atencion": 880
+    },
+    {
+      "municipio": "Chiconcuautla",
+      "riesgo_atencion": 3.178,
+      "total": 107,
+      "sin_atencion": 340
+    },
+    {
+      "municipio": "Ahuacatlán",
+      "riesgo_atencion": 3.061,
+      "total": 98,
+      "sin_atencion": 300
+    },
+    {
+      "municipio": "Atzitzintla",
+      "riesgo_atencion": 2.963,
+      "total": 54,
+      "sin_atencion": 160
+    },
+    {
+      "municipio": "Tepetzintla",
+      "riesgo_atencion": 2.879,
+      "total": 66,
+      "sin_atencion": 190
+    },
+    {
+      "municipio": "San Miguel Ixitlán",
+      "riesgo_atencion": 2.857,
+      "total": 7,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Zongozotla",
+      "riesgo_atencion": 2.857,
+      "total": 42,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Caxhuacan",
+      "riesgo_atencion": 2.812,
+      "total": 32,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Jopala",
+      "riesgo_atencion": 2.8,
+      "total": 100,
+      "sin_atencion": 280
+    },
+    {
+      "municipio": "Tlaxco",
+      "riesgo_atencion": 2.8,
+      "total": 50,
+      "sin_atencion": 140
+    },
+    {
+      "municipio": "Tlapacoya",
+      "riesgo_atencion": 2.787,
+      "total": 61,
+      "sin_atencion": 170
+    },
+    {
+      "municipio": "Tehuitzingo",
+      "riesgo_atencion": 2.769,
+      "total": 130,
+      "sin_atencion": 360
+    },
+    {
+      "municipio": "Xochitlán Todos Santos",
+      "riesgo_atencion": 2.75,
+      "total": 40,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Huitzilan de Serdán",
+      "riesgo_atencion": 2.738,
+      "total": 84,
+      "sin_atencion": 230
+    },
+    {
+      "municipio": "San Nicolás Buenos Aires",
+      "riesgo_atencion": 2.698,
+      "total": 63,
+      "sin_atencion": 170
+    },
+    {
+      "municipio": "Piaxtla",
+      "riesgo_atencion": 2.609,
+      "total": 69,
+      "sin_atencion": 180
+    },
+    {
+      "municipio": "Francisco Z. Mena",
+      "riesgo_atencion": 2.5,
+      "total": 136,
+      "sin_atencion": 340
+    },
+    {
+      "municipio": "Xochiapulco",
+      "riesgo_atencion": 2.5,
+      "total": 32,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "San Juan Atenco",
+      "riesgo_atencion": 2.432,
+      "total": 37,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Petlalcingo",
+      "riesgo_atencion": 2.353,
+      "total": 85,
+      "sin_atencion": 200
+    },
+    {
+      "municipio": "Cuayuca de Andrade",
+      "riesgo_atencion": 2.308,
+      "total": 39,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Tlachichuca",
+      "riesgo_atencion": 2.308,
+      "total": 195,
+      "sin_atencion": 450
+    },
+    {
+      "municipio": "San Sebastián Tlacotepec",
+      "riesgo_atencion": 2.222,
+      "total": 99,
+      "sin_atencion": 220
+    },
+    {
+      "municipio": "Naupan",
+      "riesgo_atencion": 2.195,
+      "total": 82,
+      "sin_atencion": 180
+    },
+    {
+      "municipio": "Pahuatlán",
+      "riesgo_atencion": 2.153,
+      "total": 144,
+      "sin_atencion": 310
+    },
+    {
+      "municipio": "Juan N. Méndez",
+      "riesgo_atencion": 2.128,
+      "total": 47,
+      "sin_atencion": 100
+    },
+    {
+      "municipio": "Jolalpan",
+      "riesgo_atencion": 2.11,
+      "total": 109,
+      "sin_atencion": 230
+    },
+    {
+      "municipio": "Ahuazotepec",
+      "riesgo_atencion": 2.0,
+      "total": 85,
+      "sin_atencion": 170
+    },
+    {
+      "municipio": "Santa Inés Ahuatempan",
+      "riesgo_atencion": 2.0,
+      "total": 40,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "Cuetzalan del Progreso",
+      "riesgo_atencion": 1.976,
+      "total": 415,
+      "sin_atencion": 820
+    },
+    {
+      "municipio": "Ahuehuetitla",
+      "riesgo_atencion": 1.905,
+      "total": 21,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Aquixtla",
+      "riesgo_atencion": 1.905,
+      "total": 63,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Mixtla",
+      "riesgo_atencion": 1.905,
+      "total": 21,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Tecomatlán",
+      "riesgo_atencion": 1.887,
+      "total": 53,
+      "sin_atencion": 100
+    },
+    {
+      "municipio": "Tecamachalco",
+      "riesgo_atencion": 1.886,
+      "total": 403,
+      "sin_atencion": 760
+    },
+    {
+      "municipio": "Teotlalco",
+      "riesgo_atencion": 1.818,
+      "total": 33,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Xochiltepec",
+      "riesgo_atencion": 1.818,
+      "total": 33,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Atlequizayan",
+      "riesgo_atencion": 1.786,
+      "total": 28,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Huehuetlán el Grande",
+      "riesgo_atencion": 1.774,
+      "total": 62,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Santo Tomás Hueyotlipan",
+      "riesgo_atencion": 1.774,
+      "total": 62,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Venustiano Carranza",
+      "riesgo_atencion": 1.748,
+      "total": 246,
+      "sin_atencion": 430
+    },
+    {
+      "municipio": "Honey",
+      "riesgo_atencion": 1.724,
+      "total": 58,
+      "sin_atencion": 100
+    },
+    {
+      "municipio": "Huehuetla",
+      "riesgo_atencion": 1.72,
+      "total": 157,
+      "sin_atencion": 270
+    },
+    {
+      "municipio": "Cuautempan",
+      "riesgo_atencion": 1.719,
+      "total": 64,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Tenampulco",
+      "riesgo_atencion": 1.714,
+      "total": 70,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Hueytlalpan",
+      "riesgo_atencion": 1.707,
+      "total": 41,
+      "sin_atencion": 70
+    },
+    {
+      "municipio": "Tlaola",
+      "riesgo_atencion": 1.701,
+      "total": 147,
+      "sin_atencion": 250
+    },
+    {
+      "municipio": "Ixtacamaxtitlán",
+      "riesgo_atencion": 1.685,
+      "total": 178,
+      "sin_atencion": 300
+    },
+    {
+      "municipio": "Tochtepec",
+      "riesgo_atencion": 1.681,
+      "total": 119,
+      "sin_atencion": 200
+    },
+    {
+      "municipio": "Chichiquila",
+      "riesgo_atencion": 1.646,
+      "total": 164,
+      "sin_atencion": 270
+    },
+    {
+      "municipio": "Tlacuilotepec",
+      "riesgo_atencion": 1.639,
+      "total": 122,
+      "sin_atencion": 200
+    },
+    {
+      "municipio": "Ajalpan",
+      "riesgo_atencion": 1.593,
+      "total": 477,
+      "sin_atencion": 760
+    },
+    {
+      "municipio": "Tuzamapan de Galeana",
+      "riesgo_atencion": 1.579,
+      "total": 57,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Nopalucan",
+      "riesgo_atencion": 1.571,
+      "total": 140,
+      "sin_atencion": 220
+    },
+    {
+      "municipio": "Chila",
+      "riesgo_atencion": 1.556,
+      "total": 45,
+      "sin_atencion": 70
+    },
+    {
+      "municipio": "Huitziltepec",
+      "riesgo_atencion": 1.556,
+      "total": 45,
+      "sin_atencion": 70
+    },
+    {
+      "municipio": "Tecali de Herrera",
+      "riesgo_atencion": 1.533,
+      "total": 137,
+      "sin_atencion": 210
+    },
+    {
+      "municipio": "Tilapa",
+      "riesgo_atencion": 1.519,
+      "total": 79,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Ixtepec",
+      "riesgo_atencion": 1.5,
+      "total": 60,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Olintla",
+      "riesgo_atencion": 1.485,
+      "total": 101,
+      "sin_atencion": 150
+    },
+    {
+      "municipio": "Atempan",
+      "riesgo_atencion": 1.477,
+      "total": 176,
+      "sin_atencion": 260
+    },
+    {
+      "municipio": "Yehualtepec",
+      "riesgo_atencion": 1.473,
+      "total": 129,
+      "sin_atencion": 190
+    },
+    {
+      "municipio": "San Salvador Huixcolotla",
+      "riesgo_atencion": 1.463,
+      "total": 82,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Izúcar de Matamoros",
+      "riesgo_atencion": 1.461,
+      "total": 698,
+      "sin_atencion": 1020
+    },
+    {
+      "municipio": "Hueyapan",
+      "riesgo_atencion": 1.429,
+      "total": 70,
+      "sin_atencion": 100
+    },
+    {
+      "municipio": "Jalpan",
+      "riesgo_atencion": 1.429,
+      "total": 77,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Tepeyahualco de Cuauhtémoc",
+      "riesgo_atencion": 1.429,
+      "total": 21,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Nicolás Bravo",
+      "riesgo_atencion": 1.395,
+      "total": 43,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Epatlán",
+      "riesgo_atencion": 1.389,
+      "total": 36,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Teteles de Avila Castillo",
+      "riesgo_atencion": 1.379,
+      "total": 58,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "San Gabriel Chilac",
+      "riesgo_atencion": 1.374,
+      "total": 131,
+      "sin_atencion": 180
+    },
+    {
+      "municipio": "Los Reyes de Juárez",
+      "riesgo_atencion": 1.373,
+      "total": 153,
+      "sin_atencion": 210
+    },
+    {
+      "municipio": "San Pablo Anicano",
+      "riesgo_atencion": 1.333,
+      "total": 30,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Amozoc",
+      "riesgo_atencion": 1.323,
+      "total": 499,
+      "sin_atencion": 660
+    },
+    {
+      "municipio": "Huatlatlauca",
+      "riesgo_atencion": 1.321,
+      "total": 53,
+      "sin_atencion": 70
+    },
+    {
+      "municipio": "Palmar de Bravo",
+      "riesgo_atencion": 1.32,
+      "total": 250,
+      "sin_atencion": 330
+    },
+    {
+      "municipio": "Zacapoaxtla",
+      "riesgo_atencion": 1.314,
+      "total": 411,
+      "sin_atencion": 540
+    },
+    {
+      "municipio": "Zautla",
+      "riesgo_atencion": 1.302,
+      "total": 169,
+      "sin_atencion": 220
+    },
+    {
+      "municipio": "Zihuateutla",
+      "riesgo_atencion": 1.3,
+      "total": 100,
+      "sin_atencion": 130
+    },
+    {
+      "municipio": "Chilchotla",
+      "riesgo_atencion": 1.293,
+      "total": 116,
+      "sin_atencion": 150
+    },
+    {
+      "municipio": "Ocotepec",
+      "riesgo_atencion": 1.277,
+      "total": 47,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Coatzingo",
+      "riesgo_atencion": 1.25,
+      "total": 32,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Coyomeapan",
+      "riesgo_atencion": 1.25,
+      "total": 56,
+      "sin_atencion": 70
+    },
+    {
+      "municipio": "Tzicatlacoyan",
+      "riesgo_atencion": 1.25,
+      "total": 32,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Zapotitlán de Méndez",
+      "riesgo_atencion": 1.25,
+      "total": 40,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Huehuetlán el Chico",
+      "riesgo_atencion": 1.237,
+      "total": 97,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Tetela de Ocampo",
+      "riesgo_atencion": 1.229,
+      "total": 236,
+      "sin_atencion": 290
+    },
+    {
+      "municipio": "Acteopan",
+      "riesgo_atencion": 1.22,
+      "total": 41,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Hermenegildo Galeana",
+      "riesgo_atencion": 1.216,
+      "total": 74,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Eloxochitlán",
+      "riesgo_atencion": 1.209,
+      "total": 91,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Acatzingo",
+      "riesgo_atencion": 1.205,
+      "total": 332,
+      "sin_atencion": 400
+    },
+    {
+      "municipio": "Cuautinchán",
+      "riesgo_atencion": 1.2,
+      "total": 50,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Chignahuapan",
+      "riesgo_atencion": 1.196,
+      "total": 368,
+      "sin_atencion": 440
+    },
+    {
+      "municipio": "Santiago Miahuatlán",
+      "riesgo_atencion": 1.184,
+      "total": 152,
+      "sin_atencion": 180
+    },
+    {
+      "municipio": "Chignautla",
+      "riesgo_atencion": 1.176,
+      "total": 187,
+      "sin_atencion": 220
+    },
+    {
+      "municipio": "Mazapiltepec de Juárez",
+      "riesgo_atencion": 1.176,
+      "total": 17,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "San Felipe Tepatlán",
+      "riesgo_atencion": 1.176,
+      "total": 34,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Tepanco de López",
+      "riesgo_atencion": 1.172,
+      "total": 145,
+      "sin_atencion": 170
+    },
+    {
+      "municipio": "San Salvador el Seco",
+      "riesgo_atencion": 1.142,
+      "total": 219,
+      "sin_atencion": 250
+    },
+    {
+      "municipio": "Acateno",
+      "riesgo_atencion": 1.136,
+      "total": 88,
+      "sin_atencion": 100
+    },
+    {
+      "municipio": "Zacatlán",
+      "riesgo_atencion": 1.12,
+      "total": 500,
+      "sin_atencion": 560
+    },
+    {
+      "municipio": "Guadalupe",
+      "riesgo_atencion": 1.094,
+      "total": 64,
+      "sin_atencion": 70
+    },
+    {
+      "municipio": "Tepexco",
+      "riesgo_atencion": 1.091,
+      "total": 55,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Nealtican",
+      "riesgo_atencion": 1.081,
+      "total": 74,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "San Pedro Yeloixtlahuaca",
+      "riesgo_atencion": 1.071,
+      "total": 28,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Huauchinango",
+      "riesgo_atencion": 1.064,
+      "total": 705,
+      "sin_atencion": 750
+    },
+    {
+      "municipio": "Chietla",
+      "riesgo_atencion": 1.059,
+      "total": 387,
+      "sin_atencion": 410
+    },
+    {
+      "municipio": "Acajete",
+      "riesgo_atencion": 1.05,
+      "total": 343,
+      "sin_atencion": 360
+    },
+    {
+      "municipio": "General Felipe Ángeles",
+      "riesgo_atencion": 1.048,
+      "total": 124,
+      "sin_atencion": 130
+    },
+    {
+      "municipio": "Tepexi de Rodríguez",
+      "riesgo_atencion": 1.046,
+      "total": 153,
+      "sin_atencion": 160
+    },
+    {
+      "municipio": "Guadalupe Victoria",
+      "riesgo_atencion": 1.043,
+      "total": 115,
+      "sin_atencion": 120
+    },
+    {
+      "municipio": "Cañada Morelos",
+      "riesgo_atencion": 1.022,
+      "total": 137,
+      "sin_atencion": 140
+    },
+    {
+      "municipio": "San Salvador el Verde",
+      "riesgo_atencion": 1.02,
+      "total": 196,
+      "sin_atencion": 200
+    },
+    {
+      "municipio": "Tepeojuma",
+      "riesgo_atencion": 1.011,
+      "total": 89,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Chalchicomula de Sesma",
+      "riesgo_atencion": 0.997,
+      "total": 341,
+      "sin_atencion": 340
+    },
+    {
+      "municipio": "Zaragoza",
+      "riesgo_atencion": 0.978,
+      "total": 92,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Tlanepantla",
+      "riesgo_atencion": 0.952,
+      "total": 21,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Zoquiapan",
+      "riesgo_atencion": 0.952,
+      "total": 21,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Quimixtlán",
+      "riesgo_atencion": 0.949,
+      "total": 137,
+      "sin_atencion": 130
+    },
+    {
+      "municipio": "San Antonio Cañada",
+      "riesgo_atencion": 0.938,
+      "total": 32,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Calpan",
+      "riesgo_atencion": 0.929,
+      "total": 140,
+      "sin_atencion": 130
+    },
+    {
+      "municipio": "San Martín Texmelucan",
+      "riesgo_atencion": 0.922,
+      "total": 987,
+      "sin_atencion": 910
+    },
+    {
+      "municipio": "Tulcingo",
+      "riesgo_atencion": 0.891,
+      "total": 101,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "San Jerónimo Xayacatlán",
+      "riesgo_atencion": 0.889,
+      "total": 45,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Tlapanalá",
+      "riesgo_atencion": 0.889,
+      "total": 90,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "Libres",
+      "riesgo_atencion": 0.887,
+      "total": 203,
+      "sin_atencion": 180
+    },
+    {
+      "municipio": "Coxcatlán",
+      "riesgo_atencion": 0.879,
+      "total": 182,
+      "sin_atencion": 160
+    },
+    {
+      "municipio": "Coyotepec",
+      "riesgo_atencion": 0.87,
+      "total": 23,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Huaquechula",
+      "riesgo_atencion": 0.849,
+      "total": 271,
+      "sin_atencion": 230
+    },
+    {
+      "municipio": "Atzala",
+      "riesgo_atencion": 0.833,
+      "total": 12,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Cuapiaxtla de Madero",
+      "riesgo_atencion": 0.816,
+      "total": 49,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Chinantla",
+      "riesgo_atencion": 0.811,
+      "total": 37,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Yaonáhuac",
+      "riesgo_atencion": 0.811,
+      "total": 74,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Lafragua",
+      "riesgo_atencion": 0.806,
+      "total": 62,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Hueytamalco",
+      "riesgo_atencion": 0.8,
+      "total": 200,
+      "sin_atencion": 160
+    },
+    {
+      "municipio": "Oriental",
+      "riesgo_atencion": 0.8,
+      "total": 100,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "Tlahuapan",
+      "riesgo_atencion": 0.798,
+      "total": 238,
+      "sin_atencion": 190
+    },
+    {
+      "municipio": "Xochitlán de Vicente Suárez",
+      "riesgo_atencion": 0.796,
+      "total": 113,
+      "sin_atencion": 90
+    },
+    {
+      "municipio": "Juan Galindo",
+      "riesgo_atencion": 0.794,
+      "total": 63,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Ocoyucan",
+      "riesgo_atencion": 0.785,
+      "total": 191,
+      "sin_atencion": 150
+    },
+    {
+      "municipio": "Tepeaca",
+      "riesgo_atencion": 0.783,
+      "total": 498,
+      "sin_atencion": 390
+    },
+    {
+      "municipio": "Ixcamilpa de Guerrero",
+      "riesgo_atencion": 0.769,
+      "total": 39,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Ixcaquixtla",
+      "riesgo_atencion": 0.769,
+      "total": 65,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Cuyoaco",
+      "riesgo_atencion": 0.762,
+      "total": 105,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "Tlacotepec de Benito Juárez",
+      "riesgo_atencion": 0.752,
+      "total": 319,
+      "sin_atencion": 240
+    },
+    {
+      "municipio": "Coronango",
+      "riesgo_atencion": 0.751,
+      "total": 346,
+      "sin_atencion": 260
+    },
+    {
+      "municipio": "Pantepec",
+      "riesgo_atencion": 0.738,
+      "total": 149,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Teziutlán",
+      "riesgo_atencion": 0.73,
+      "total": 644,
+      "sin_atencion": 470
+    },
+    {
+      "municipio": "Domingo Arenas",
+      "riesgo_atencion": 0.727,
+      "total": 55,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Tehuacán",
+      "riesgo_atencion": 0.716,
+      "total": 1816,
+      "sin_atencion": 1300
+    },
+    {
+      "municipio": "Acatlán",
+      "riesgo_atencion": 0.714,
+      "total": 308,
+      "sin_atencion": 220
+    },
+    {
+      "municipio": "Teopantlán",
+      "riesgo_atencion": 0.714,
+      "total": 56,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Xicotepec",
+      "riesgo_atencion": 0.712,
+      "total": 562,
+      "sin_atencion": 400
+    },
+    {
+      "municipio": "Cuautlancingo",
+      "riesgo_atencion": 0.706,
+      "total": 510,
+      "sin_atencion": 360
+    },
+    {
+      "municipio": "Nauzontla",
+      "riesgo_atencion": 0.698,
+      "total": 43,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Juan C. Bonilla",
+      "riesgo_atencion": 0.671,
+      "total": 164,
+      "sin_atencion": 110
+    },
+    {
+      "municipio": "Huejotzingo",
+      "riesgo_atencion": 0.659,
+      "total": 501,
+      "sin_atencion": 330
+    },
+    {
+      "municipio": "Tlatlauquitepec",
+      "riesgo_atencion": 0.65,
+      "total": 369,
+      "sin_atencion": 240
+    },
+    {
+      "municipio": "Chiautla",
+      "riesgo_atencion": 0.644,
+      "total": 233,
+      "sin_atencion": 150
+    },
+    {
+      "municipio": "Xiutetelco",
+      "riesgo_atencion": 0.596,
+      "total": 218,
+      "sin_atencion": 130
+    },
+    {
+      "municipio": "Tepatlaxco de Hidalgo",
+      "riesgo_atencion": 0.58,
+      "total": 138,
+      "sin_atencion": 80
+    },
+    {
+      "municipio": "San Andrés Cholula",
+      "riesgo_atencion": 0.545,
+      "total": 642,
+      "sin_atencion": 350
+    },
+    {
+      "municipio": "San José Chiapa",
+      "riesgo_atencion": 0.545,
+      "total": 55,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Ahuatlán",
+      "riesgo_atencion": 0.541,
+      "total": 37,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Zapotitlán",
+      "riesgo_atencion": 0.533,
+      "total": 75,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "San Pedro Cholula",
+      "riesgo_atencion": 0.522,
+      "total": 881,
+      "sin_atencion": 460
+    },
+    {
+      "municipio": "Molcaxac",
+      "riesgo_atencion": 0.517,
+      "total": 58,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Soltepec",
+      "riesgo_atencion": 0.488,
+      "total": 82,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "San Matías Tlalancaleca",
+      "riesgo_atencion": 0.484,
+      "total": 124,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Ayotoxco de Guerrero",
+      "riesgo_atencion": 0.476,
+      "total": 63,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Camocuautla",
+      "riesgo_atencion": 0.476,
+      "total": 21,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Chapulco",
+      "riesgo_atencion": 0.476,
+      "total": 42,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "San Miguel Xoxtla",
+      "riesgo_atencion": 0.476,
+      "total": 84,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "San Nicolás de los Ranchos",
+      "riesgo_atencion": 0.455,
+      "total": 110,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Zacapala",
+      "riesgo_atencion": 0.455,
+      "total": 44,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Esperanza",
+      "riesgo_atencion": 0.439,
+      "total": 114,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "Chigmecatitlán",
+      "riesgo_atencion": 0.435,
+      "total": 23,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Zinacatepec",
+      "riesgo_atencion": 0.435,
+      "total": 138,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Caltepec",
+      "riesgo_atencion": 0.426,
+      "total": 47,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Atoyatempan",
+      "riesgo_atencion": 0.417,
+      "total": 48,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Chiautzingo",
+      "riesgo_atencion": 0.414,
+      "total": 145,
+      "sin_atencion": 60
+    },
+    {
+      "municipio": "Tianguismanalco",
+      "riesgo_atencion": 0.408,
+      "total": 98,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "Atexcal",
+      "riesgo_atencion": 0.385,
+      "total": 26,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "San José Miahuatlán",
+      "riesgo_atencion": 0.326,
+      "total": 92,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Jonotla",
+      "riesgo_atencion": 0.303,
+      "total": 33,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Rafael Lara Grajales",
+      "riesgo_atencion": 0.291,
+      "total": 103,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Vicente Guerrero",
+      "riesgo_atencion": 0.287,
+      "total": 174,
+      "sin_atencion": 50
+    },
+    {
+      "municipio": "San Jerónimo Tecuanipan",
+      "riesgo_atencion": 0.263,
+      "total": 38,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Altepexi",
+      "riesgo_atencion": 0.244,
+      "total": 164,
+      "sin_atencion": 40
+    },
+    {
+      "municipio": "San Felipe Teotlalcingo",
+      "riesgo_atencion": 0.233,
+      "total": 86,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Tochimilco",
+      "riesgo_atencion": 0.19,
+      "total": 158,
+      "sin_atencion": 30
+    },
+    {
+      "municipio": "Atlixco",
+      "riesgo_atencion": 0.156,
+      "total": 1091,
+      "sin_atencion": 170
+    },
+    {
+      "municipio": "San Gregorio Atzompa",
+      "riesgo_atencion": 0.154,
+      "total": 65,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Atzitzihuacán",
+      "riesgo_atencion": 0.153,
+      "total": 131,
+      "sin_atencion": 20
+    },
+    {
+      "municipio": "Santa Isabel Cholula",
+      "riesgo_atencion": 0.139,
+      "total": 72,
+      "sin_atencion": 10
+    },
+    {
+      "municipio": "Albino Zertuche",
+      "riesgo_atencion": 0.0,
+      "total": 20,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "Coatepec",
+      "riesgo_atencion": 0.0,
+      "total": 11,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "Cohetzala",
+      "riesgo_atencion": 0.0,
+      "total": 11,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "La Magdalena Tlatlauquitepec",
+      "riesgo_atencion": 0.0,
+      "total": 2,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "San Diego la Mesa Tochimiltzingo",
+      "riesgo_atencion": 0.0,
+      "total": 12,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "San Juan Atzompa",
+      "riesgo_atencion": 0.0,
+      "total": 4,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "Santa Catarina Tlaltempan",
+      "riesgo_atencion": 0.0,
+      "total": 10,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "Tepemaxalco",
+      "riesgo_atencion": 0.0,
+      "total": 8,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "Totoltepec de Guerrero",
+      "riesgo_atencion": 0.0,
+      "total": 15,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "Xicotlán",
+      "riesgo_atencion": 0.0,
+      "total": 6,
+      "sin_atencion": 0
+    },
+    {
+      "municipio": "No especificado",
+      "riesgo_atencion": 0.0,
+      "total": 1,
+      "sin_atencion": 0
+    }
+  ],
+  "epidemiologia_puebla_2026": {
+    "respiratorias": [
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Enfermedad",
+        "Unnamed: 1": "CIE-10",
+        "Unnamed: 2": "Sem. 2026",
+        "Unnamed: 3": "Acum. 2026 H",
+        "Unnamed: 4": "Acum. 2026 M",
+        "Unnamed: 5": "Acum. 2025",
+        "Unnamed: 6": "Fuente",
+        "Unnamed: 7": "Notas"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Tuberculosis respiratoria",
+        "Unnamed: 1": "A15-A16",
+        "Unnamed: 2": "9",
+        "Unnamed: 3": "82",
+        "Unnamed: 4": "53",
+        "Unnamed: 5": "127",
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Otitis media aguda",
+        "Unnamed: 1": "H65.0-H65.1",
+        "Unnamed: 2": "346",
+        "Unnamed: 3": "2498",
+        "Unnamed: 4": "3230",
+        "Unnamed: 5": "4384",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Infecciones respiratorias agudas (IRA)",
+        "Unnamed: 1": "J00-J06/J20/J21",
+        "Unnamed: 2": "11916",
+        "Unnamed: 3": "114166",
+        "Unnamed: 4": "152892",
+        "Unnamed: 5": "262537",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Faringitis y amigdalitis estreptocócicas",
+        "Unnamed: 1": "J02.0/J03.0",
+        "Unnamed: 2": "49",
+        "Unnamed: 3": "244",
+        "Unnamed: 4": "378",
+        "Unnamed: 5": "43",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Neumonías y bronconeumonías",
+        "Unnamed: 1": "J12-J18",
+        "Unnamed: 2": "81",
+        "Unnamed: 3": "821",
+        "Unnamed: 4": "871",
+        "Unnamed: 5": "1723",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Respiratorio (Semana 14, 2026)": "Covid-19",
+        "Unnamed: 1": "U07.1",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": "4",
+        "Unnamed: 4": "2",
+        "Unnamed: 5": "72",
+        "Unnamed: 6": "DGE §",
+        "Unnamed: 7": "Confirmados RT-PCR/USMER"
+      }
+    ],
+    "digestivas": [
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Enfermedad",
+        "Unnamed: 1": "CIE-10",
+        "Unnamed: 2": "Sem. 2026",
+        "Unnamed: 3": "Acum. 2026 H",
+        "Unnamed: 4": "Acum. 2026 M",
+        "Unnamed: 5": "Acum. 2025",
+        "Unnamed: 6": "Fuente",
+        "Unnamed: 7": "Notas"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Cólera",
+        "Unnamed: 1": "A00",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Fiebre tifoidea",
+        "Unnamed: 1": "A01.0",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": "5",
+        "Unnamed: 4": "12",
+        "Unnamed: 5": "4",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Fiebre paratifoidea",
+        "Unnamed: 1": "A01.1-A01.4",
+        "Unnamed: 2": "1",
+        "Unnamed: 3": "2",
+        "Unnamed: 4": "2",
+        "Unnamed: 5": "4",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Otras salmonelosis",
+        "Unnamed: 1": "A02",
+        "Unnamed: 2": "12",
+        "Unnamed: 3": "67",
+        "Unnamed: 4": "140",
+        "Unnamed: 5": "261",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Shigelosis",
+        "Unnamed: 1": "A03",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": "5",
+        "Unnamed: 4": "4",
+        "Unnamed: 5": "5",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Inf. intestinales otros org.",
+        "Unnamed: 1": "A04/A08-A09",
+        "Unnamed: 2": "4035",
+        "Unnamed: 3": "24714",
+        "Unnamed: 4": "28841",
+        "Unnamed: 5": "39077",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Intoxicación alimentaria bacteriana",
+        "Unnamed: 1": "A05",
+        "Unnamed: 2": "3",
+        "Unnamed: 3": "14",
+        "Unnamed: 4": "23",
+        "Unnamed: 5": "21",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Amebiasis intestinal",
+        "Unnamed: 1": "A06.0-A06.3/A06.9",
+        "Unnamed: 2": "65",
+        "Unnamed: 3": "486",
+        "Unnamed: 4": "515",
+        "Unnamed: 5": "771",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      },
+      {
+        "PUEBLA – Enfermedades Infecciosas del Aparato Digestivo (Semana 14, 2026)": "Absceso hepático amebiano",
+        "Unnamed: 1": "A06.4",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": "1",
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": "1",
+        "Unnamed: 6": "SINAVE/DGE",
+        "Unnamed: 7": "Probables"
+      }
+    ],
+    "zoonosis_y_vectores": [
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Enfermedad",
+        "Unnamed: 1": "CIE-10",
+        "Unnamed: 2": "Sem. 2026",
+        "Unnamed: 3": "Acum. 2026 H",
+        "Unnamed: 4": "Acum. 2026 M",
+        "Unnamed: 5": "Acum. 2025",
+        "Unnamed: 6": "Fuente",
+        "Unnamed: 7": "Notas"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Tifo epidémico",
+        "Unnamed: 1": "A75.0",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Tifo murino",
+        "Unnamed: 1": "A75.2",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Otras Rickettsiosis",
+        "Unnamed: 1": "A79",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Fiebre manchada",
+        "Unnamed: 1": "A77.0",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Dengue no grave",
+        "Unnamed: 1": "A97.0",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": "1",
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": "19",
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Dengue con signos de alarma",
+        "Unnamed: 1": "A97.1",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": "1",
+        "Unnamed: 5": "19",
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Dengue grave",
+        "Unnamed: 1": "A97.2",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": "2",
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Chikungunya",
+        "Unnamed: 1": "A92.0",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      },
+      {
+        "PUEBLA – Enfermedades Transmitidas por Vector (Semana 14, 2026)": "Fiebre Oeste del Nilo",
+        "Unnamed: 1": "A92.3",
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "SINAVE/DGE §",
+        "Unnamed: 7": "Confirmados"
+      }
+    ]
+  },
+  "riesgos_ceniza": {
+    "efectos_salud": [
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "Fuente: Institute of Geological and Nuclear Sciences, NZ (2003) & Ortiz (1995). Inferencia para Puebla basada en escenario Este (peor caso = 2.5 cm).",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "A. Efectos Generales de la Ceniza (Tabla 3.4 – CENAPRED)",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "Espesor (mm)",
+        "Unnamed: 1": "Espesor (cm)",
+        "Unnamed: 2": "Efectos Principales",
+        "Unnamed: 3": "Aplica a Puebla\n(Viento Este)",
+        "Unnamed: 4": "Nivel"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "<1 mm",
+        "Unnamed: 1": "<0.1 cm",
+        "Unnamed: 2": "Irritante pulmonar y ocular. Cierran aeropuertos. Daño menor a vehículos. Contaminación de agua.",
+        "Unnamed: 3": "SÍ (todos los escenarios)",
+        "Unnamed: 4": "BAJO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "1–5 mm",
+        "Unnamed: 1": "0.1–0.5 cm",
+        "Unnamed: 2": "Daños posibles en cosechas. Ganado afectado si consume agua/alimento contaminado. Posibles cortes eléctricos.",
+        "Unnamed: 3": "SÍ (escenario Este: 2.5 cm supera este umbral)",
+        "Unnamed: 4": "MODERADO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "5–100 mm",
+        "Unnamed: 1": "0.5–10 cm",
+        "Unnamed: 2": "Entierro de pasto y plantas bajas. Limpieza urbana mayor. Riesgo de colapso de techos débiles con 100 mm.",
+        "Unnamed: 3": "SÍ – escenario Este (2.5 cm = 25 mm) entra en esta categoría",
+        "Unnamed: 4": "MODERADO-ALTO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "100–300 mm",
+        "Unnamed: 1": "10–30 cm",
+        "Unnamed: 2": "Colapso de edificios sin limpieza. Daño severo a árboles.",
+        "Unnamed: 3": "NO – requeriría erupción de mayor intensidad o mayor proximidad",
+        "Unnamed: 4": "ALTO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": ">300 mm",
+        "Unnamed: 1": ">30 cm",
+        "Unnamed: 2": "Muerte masiva de vegetación. Derrumbe de techos. Corte eléctrico y telefónico. Caminos cerrados.",
+        "Unnamed: 3": "NO – escenario extremo, improbable a 45 km",
+        "Unnamed: 4": "CRÍTICO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": NaN,
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "B. Vulnerabilidad Agrícola por Caída de Ceniza (Tabla 3.2 – Ortiz, 1995) – Relevancia para Puebla",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "Espesor (mm)",
+        "Unnamed: 1": "Cultivo / Vegetación Afectada",
+        "Unnamed: 2": "Tipo de Daño",
+        "Unnamed: 3": "Relevancia en Puebla",
+        "Unnamed: 4": "¿Aplica?"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "<10",
+        "Unnamed: 1": "Pasto, trigo, maíz",
+        "Unnamed: 2": "Daños menores",
+        "Unnamed: 3": "Alta – cultivos comunes en la región",
+        "Unnamed: 4": "SÍ (2.5 cm = 25 mm)"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "10",
+        "Unnamed: 1": "Manzanas, algodón, tabaco, verduras",
+        "Unnamed: 2": "20-40% de cosecha dañada",
+        "Unnamed: 3": "Media – frutas y verduras locales",
+        "Unnamed: 4": "SÍ"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "15",
+        "Unnamed: 1": "Alfalfa, pastos",
+        "Unnamed: 2": "Pérdidas significativas",
+        "Unnamed: 3": "Alta – ganadería regional",
+        "Unnamed: 4": "SÍ"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "20",
+        "Unnamed: 1": "Naranja, mandarina, moras",
+        "Unnamed: 2": "Daños considerables en frutos",
+        "Unnamed: 3": "Alta – citricultura poblana",
+        "Unnamed: 4": "SÍ"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "25",
+        "Unnamed: 1": "Caña de azúcar, papa",
+        "Unnamed: 2": "Daños en cultivos de raíz",
+        "Unnamed: 3": "Media",
+        "Unnamed: 4": "SÍ"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "30",
+        "Unnamed: 1": "Frutos en general",
+        "Unnamed: 2": "Frutos inservibles por capa de ceniza",
+        "Unnamed: 3": "Alta",
+        "Unnamed: 4": "SÍ (2.5 cm = 25 mm ≈ este nivel)"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "40",
+        "Unnamed: 1": "Legumbres, trigo, cebada, heno",
+        "Unnamed: 2": "50% pérdidas en legumbres",
+        "Unnamed: 3": "Alta – cereales en Puebla",
+        "Unnamed: 4": "NO (requiere >40 mm)"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "50",
+        "Unnamed: 1": "Plataneras",
+        "Unnamed: 2": "Destrucción",
+        "Unnamed: 3": "Baja en Puebla",
+        "Unnamed: 4": "NO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "100",
+        "Unnamed: 1": "Palmas, ramas",
+        "Unnamed: 2": "Rotura por peso",
+        "Unnamed: 3": "Nula a 45 km en escenario Este",
+        "Unnamed: 4": "NO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "150",
+        "Unnamed: 1": "Cafetales",
+        "Unnamed: 2": "Destruidos",
+        "Unnamed: 3": "Nula",
+        "Unnamed: 4": "NO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": "200",
+        "Unnamed: 1": "Arrozales",
+        "Unnamed: 2": "Destruidos",
+        "Unnamed: 3": "Nula",
+        "Unnamed: 4": "NO"
+      },
+      {
+        "Efectos de la Ceniza Volcánica según Espesor de Depósito – Aplicación a Puebla": ">1500",
+        "Unnamed: 1": "Toda la vegetación",
+        "Unnamed: 2": "Muerte masiva",
+        "Unnamed: 3": "Nula",
+        "Unnamed: 4": "NO"
+      }
+    ],
+    "propiedades": [
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Fuente: Shipley & Sarna-Warjcicki (1982); CENAPRED (2003). Inferencia aplicada a Puebla.",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "A. Densidad de Partículas de Ceniza (Tabla 3.1)",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Tipo de Partícula",
+        "Unnamed: 1": "Densidad Mín. (kg/m³)",
+        "Unnamed: 2": "Densidad Máx. (kg/m³)",
+        "Unnamed: 3": "Densidad Prom. (kg/m³)",
+        "Unnamed: 4": "Observación"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Fragmentos de pomez",
+        "Unnamed: 1": "700",
+        "Unnamed: 2": "1200",
+        "Unnamed: 3": "950",
+        "Unnamed: 4": "Ligera – mayor dispersión a largas distancias"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Vidrio volcánico",
+        "Unnamed: 1": "2350",
+        "Unnamed: 2": "2450",
+        "Unnamed: 3": "2400",
+        "Unnamed: 4": "Abrasiva – daña motores y equipos electrónicos"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Cristales y minerales",
+        "Unnamed: 1": "2700",
+        "Unnamed: 2": "3300",
+        "Unnamed: 3": "3000",
+        "Unnamed: 4": "Pesada – mayor depósito cerca del cráter"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Otros fragmentos roca",
+        "Unnamed: 1": "2600",
+        "Unnamed: 2": "3200",
+        "Unnamed: 3": "2900",
+        "Unnamed: 4": "Pesada – proyectiles balísticos en zona cercana"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Ceniza no compactada",
+        "Unnamed: 1": "900",
+        "Unnamed: 2": "1100",
+        "Unnamed: 3": "1000",
+        "Unnamed: 4": "~1,000 kg/m³ comparable al agua/granizo"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Ceniza húmeda compactada",
+        "Unnamed: 1": "2800",
+        "Unnamed: 2": "3000",
+        "Unnamed: 3": "2900",
+        "Unnamed: 4": "30 kg por 1 cm de espesor / 1 m² de superficie"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": NaN,
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "B. Carga Estructural de la Ceniza sobre Techos – Inferencia para Puebla (Escenario Este: 2.5 cm)",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Condición de Ceniza",
+        "Unnamed: 1": "Espesor (cm)",
+        "Unnamed: 2": "Densidad (kg/m³)",
+        "Unnamed: 3": "Carga (kg/m²)",
+        "Unnamed: 4": "Riesgo para techos en Puebla"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Ceniza seca (no compactada)",
+        "Unnamed: 1": "2.5",
+        "Unnamed: 2": "1000",
+        "Unnamed: 3": "25",
+        "Unnamed: 4": "BAJO – techos convencionales resisten"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Ceniza húmeda (compactada)",
+        "Unnamed: 1": "2.5",
+        "Unnamed: 2": "3000",
+        "Unnamed: 3": "75",
+        "Unnamed: 4": "MODERADO – 75 kg/m², vigilar techos planos"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Acumulación en 3 días (seca)",
+        "Unnamed: 1": "7.5",
+        "Unnamed: 2": "1000",
+        "Unnamed: 3": "75",
+        "Unnamed: 4": "MODERADO – si no se limpia"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Acumulación en 3 días (húmeda)",
+        "Unnamed: 1": "7.5",
+        "Unnamed: 2": "3000",
+        "Unnamed: 3": "225",
+        "Unnamed: 4": "ALTO – colapso posible en estructuras débiles"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Umbral colapso típico (ref.)",
+        "Unnamed: 1": "10",
+        "Unnamed: 2": "2000",
+        "Unnamed: 3": "200",
+        "Unnamed: 4": "CRÍTICO – umbral de colapso para techos planos"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": NaN,
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "C. Efectos de la Ceniza en Aviación – Relevancia para Aeropuerto de Puebla (Tabla 3.3)",
+        "Unnamed: 1": NaN,
+        "Unnamed: 2": NaN,
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Tipo de Daño",
+        "Unnamed: 1": "Descripción",
+        "Unnamed: 2": "Umbral (espesor)",
+        "Unnamed: 3": "¿Aplica a Puebla\n(2.5 cm)?",
+        "Unnamed: 4": "Acción recomendada"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Impacto",
+        "Unnamed: 1": "Daños directos a miles de km del volcán",
+        "Unnamed: 2": "<1 mm",
+        "Unnamed: 3": "SÍ – cierre aeropuerto obligatorio",
+        "Unnamed: 4": "Cierre preventivo del aeropuerto"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Abrasión",
+        "Unnamed: 1": "Daños en bordes, mecánicas e hidráulicos",
+        "Unnamed: 2": "Cualquier espesor",
+        "Unnamed: 3": "SÍ",
+        "Unnamed: 4": "Inspección de aeronaves post-evento"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Acreción",
+        "Unnamed: 1": "Ceniza funde en cámara de combustión; flameo de turbina",
+        "Unnamed: 2": ">1 mm",
+        "Unnamed: 3": "SÍ – posible en vuelos cercanos",
+        "Unnamed: 4": "Evitar vuelos en zona de nube"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Adhesión",
+        "Unnamed: 1": "Tapona sistema de refrigeración y sensores",
+        "Unnamed: 2": "Cualquier espesor",
+        "Unnamed: 3": "SÍ",
+        "Unnamed: 4": "Revisión de sensores y filtros"
+      },
+      {
+        "Propiedades Físicas de la Ceniza y Riesgo para Infraestructura de Puebla": "Psicológicos",
+        "Unnamed: 1": "Ocupantes notan gases y partículas en cabina",
+        "Unnamed: 2": "<1 mm",
+        "Unnamed: 3": "SÍ",
+        "Unnamed: 4": "Máscaras y comunicación a pasajeros"
+      }
+    ]
+  }
+}

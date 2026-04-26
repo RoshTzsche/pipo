@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "IMSS San José",
+    "direccion": "Av. 18 Ote, Centro, Puebla",
+    "coords": [19.0432, -98.1981],
+    "saturacion": 30,
+    "capacidades": ["Medicina General", "Vacunación", "Curaciones Menores", "Dermatología"]
+  },
+  {
+    "id": 2,
+    "nombre": "HGZ 6 Angelópolis",
+    "direccion": "Blvd. Atlixcáyotl, Angelópolis",
+    "coords": [19.0178, -98.2368],
+    "saturacion": 45,
+    "capacidades": ["Cardiología", "Urgencias Mayores", "Rayos X", "Cirugía", "Terapia Intensiva", "Neurología"]
+  },
+  {
+    "id": 3,
+    "nombre": "UMF 20 Cholula",
+    "direccion": "Av. 14 Ote, San Pedro Cholula",
+    "coords": [19.0636, -98.3027],
+    "saturacion": 65,
+    "capacidades": ["Pediatría", "Ginecología", "Medicina Familiar", "Afectaciones por Ceniza", "Nutrición"]
+  },
+  {
+    "id": 4,
+    "nombre": "IMSS Valsequillo",
+    "direccion": "Carretera Valsequillo, Sur",
+    "coords": [18.9956, -98.1825],
+    "saturacion": 82,
+    "capacidades": ["Traumatología", "Rayos X", "Rehabilitación", "Ortopedia", "Fisioterapia"]
+  },
+  {
+    "id": 5,
+    "nombre": "Hospital General del Sur",
+    "direccion": "Antiguo Camino a Castillotla, Agua Santa, Puebla",
+    "coords": [18.9815, -98.2312],
+    "saturacion": 55,
+    "capacidades": ["Urgencias", "Cirugía General", "Odontología", "Laboratorio", "Banco de Sangre"]
+  },
+  {
+    "id": 6,
+    "nombre": "Hospital General de Cholula",
+    "direccion": "Periférico Ecológico, San Andrés Cholula",
+    "coords": [19.0312, -98.2698],
+    "saturacion": 40,
+    "capacidades": ["Atención COVID", "Neumología", "Rayos X", "Medicina Interna", "Afectaciones por Ceniza"]
+  },
+  {
+    "id": 7,
+    "nombre": "IMSS La Margarita",
+    "direccion": "Av. 38 Sur, La Margarita, Puebla",
+    "coords": [19.0089, -98.1634],
+    "saturacion": 90,
+    "capacidades": ["Ginecobstetricia", "Pediatría", "Urgencias", "Cirugía", "Rayos X"]
+  }
+]

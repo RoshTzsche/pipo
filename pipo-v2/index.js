@@ -21,6 +21,20 @@ if (!fs.existsSync(expedientesDir)) {
   console.log('📁 Carpeta expedientes creada');
 }
 
+// Función auxiliar para leer las clínicas desde el JSON
+const leerClinicas = () => {
+  try {
+    const clinicasPath = path.join(process.cwd(), 'data', 'clinicas.json');
+    if (fs.existsSync(clinicasPath)) {
+      return JSON.parse(fs.readFileSync(clinicasPath, 'utf8'));
+    }
+    return []; // Fallback si no existe el archivo
+  } catch (error) {
+    console.error('Error al leer el archivo de clínicas:', error);
+    return [];
+  }
+};
+
 app.post('/api/chat', async (req, res) => {
   const { messages, municipio } = req.body;
 
@@ -44,15 +58,14 @@ app.post('/api/chat', async (req, res) => {
     console.error('Error al leer datos de conocimiento:', error);
   }
 
-  // System Prompt Blindado
-  let systemPrompt = `Eres un Especialista de Triaje empático y profesional en salud pública de Puebla.
+  // AGENTE 1: Sistema de Triaje
+  let systemPromptTriaje = `Eres un Especialista de Triaje empático y profesional en salud pública de Puebla.
 
 INSTRUCCIONES:
 1. Sé empático y recopila: nombre, edad, sexo, municipio y síntomas.
 2. Responde SIEMPRE en texto natural mientras recolectas datos. NUNCA muestres JSON al usuario.
 
 CONTEXTO EPIDEMIOLÓGICO Y AMBIENTAL DE PUEBLA (¡USAR PARA EL INSIGHT!):
-- RIESGO VOLCÁNICO: Si el paciente es de San Andrés Cholula, San Pedro Cholula, Atlixco o Puebla capital, y presenta tos, irritación de garganta o ardor de ojos, ES POR CAÍDA DE CENIZA DEL POPOCATÉPETL. 
 - MORTALIDAD HOMBRES >35: Alto riesgo de enfermedades del hígado y corazón.
 - MORTALIDAD MUJERES >65: Alto riesgo de enfermedades cardiovasculares y diabetes.
 
@@ -74,24 +87,24 @@ Cuando tengas TODOS los datos, genera ÚNICAMENTE este JSON. ESTÁ ESTRICTAMENTE
 }`;
 
   if (municipioData) {
-    systemPrompt += `\nDATOS DEL MUNICIPIO DE ${municipioData.municipio.toUpperCase()}: Riesgo de atención: ${municipioData.riesgo_atencion}. Considéralo para tu insight.`;
+    systemPromptTriaje += `\nDATOS DEL MUNICIPIO DE ${municipioData.municipio.toUpperCase()}: Riesgo de atención: ${municipioData.riesgo_atencion}. Considéralo para tu insight.`;
   }
 
   try {
+    // 1. LLAMADA AL PRIMER MODELO (TRIAJE)
     const chatCompletion = await groq.chat.completions.create({
-      messages: [{ role: "system", content: systemPrompt }, ...messages],
+      messages: [{ role: "system", content: systemPromptTriaje }, ...messages],
       model: "llama-3.3-70b-versatile",
-      temperature: 0.1, // Casi en cero para matar las alucinaciones y forzar formato
+      temperature: 0.1, 
       max_tokens: 1024
     });
 
     const rawContent = chatCompletion.choices[0].message.content;
-    console.log("IA respondió:", rawContent);
+    console.log("IA Triaje respondió:", rawContent);
 
-    // Limpieza: Eliminar cualquier rastro de markdown (```json y ```)
+    // Limpieza de Markdown
     let cleanedContent = rawContent.replace(/```json/g, '').replace(/```/g, '').trim();
 
-    // EXTRACCIÓN DE JSON POR FUERZA BRUTA
     const firstBracket = cleanedContent.indexOf('{');
     const lastBracket = cleanedContent.lastIndexOf('}');
 
@@ -100,14 +113,65 @@ Cuando tengas TODOS los datos, genera ÚNICAMENTE este JSON. ESTÁ ESTRICTAMENTE
       try {
         const parsedObject = JSON.parse(jsonString);
 
-        // LÓGICA DE PERSISTENCIA SEGURA
+        // SI EL TRIAJE TERMINÓ, LLAMAMOS AL SEGUNDO MODELO
         if (parsedObject.status === 'finalizado' && parsedObject.expediente) {
+          
+          console.log("Iniciando Agente 2: Asignación de Clínica...");
+          
+          // Leer las clínicas actualizadas desde el archivo JSON
+          const clinicasDisponibles = leerClinicas();
+
+          // AGENTE 2: Asignación de Clínica
+          const systemPromptAsignacion = `Eres el Director Médico de Asignación del Gobierno de Puebla. 
+Se te entregará el expediente de un paciente recién evaluado y una lista de clínicas con sus capacidades.
+Tu objetivo es elegir la MEJOR clínica y redactar una justificación estelar.
+
+REGLAS DE ASIGNACIÓN:
+1. CRUCE MÉDICO: Asegúrate de que la clínica tenga la capacidad exacta para el síntoma (Ej. Rayos X para fracturas).
+2. LA RECOMENDACIÓN (EL PUNCH): Escribe un mensaje directo, empático y muy convincente dirigido al paciente en segunda persona. Debe sonar como un verdadero médico VIP cuidando de él. 
+Ejemplo de tono: "Elegí esta clínica para ti porque cuenta con equipo de Rayos X para revisar tu brazo, y actualmente tiene baja saturación, por lo que te atenderán rapidísimo."
+
+DATOS DE CLÍNICAS DISPONIBLES:
+${JSON.stringify(clinicasDisponibles)}
+
+EXPEDIENTE DEL PACIENTE:
+${JSON.stringify(parsedObject.expediente)}
+
+Devuelve ÚNICAMENTE un JSON con este formato, SIN markdown:
+{
+  "clinica_recomendada": "Nombre exacto de la clínica elegida",
+  "recomendacion_medica": "Tu mensaje hiper-personalizado y empático aquí"
+}`;
+
+          // 2. LLAMADA AL SEGUNDO MODELO (ASIGNACIÓN)
+          const asignacionCompletion = await groq.chat.completions.create({
+            messages: [{ role: "system", content: systemPromptAsignacion }],
+            model: "llama-3.3-70b-versatile",
+            temperature: 0.1,
+            max_tokens: 500
+          });
+
+          let asignacionRaw = asignacionCompletion.choices[0].message.content;
+          let asignacionClean = asignacionRaw.replace(/```json/g, '').replace(/```/g, '').trim();
+          
+          const aFirst = asignacionClean.indexOf('{');
+          const aLast = asignacionClean.lastIndexOf('}');
+          
+          if (aFirst !== -1 && aLast !== -1) {
+            const asignacionJson = JSON.parse(asignacionClean.substring(aFirst, aLast + 1));
+            
+            // JUNTAR LOS RESULTADOS DEL AGENTE 1 Y AGENTE 2
+            parsedObject.expediente.clinica_asignada = asignacionJson.clinica_recomendada;
+            parsedObject.expediente.recomendacion_medica = asignacionJson.recomendacion_medica;
+          }
+
+          // GUARDAR EXPEDIENTE ACTUALIZADO
           const timestamp = Date.now();
           const filename = `expediente_${timestamp}.json`;
           const filepath = path.join(expedientesDir, filename);
           
           fs.writeFileSync(filepath, JSON.stringify(parsedObject.expediente, null, 2));
-          console.log(`💾 Expediente guardado: ${filename}`);
+          console.log(`💾 Expediente guardado con asignación médica: ${filename}`);
           
           return res.json(parsedObject);
         }
@@ -116,8 +180,7 @@ Cuando tengas TODOS los datos, genera ÚNICAMENTE este JSON. ESTÁ ESTRICTAMENTE
       }
     }
 
-    // CAÍDA SEGURA (FALLBACK PARA PLÁTICA NORMAL)
-    // Retorna SIEMPRE un objeto estructurado para que React nunca truene
+    // CAÍDA SEGURA
     return res.json({ message: cleanedContent });
 
   } catch (error) {
@@ -128,5 +191,5 @@ Cuando tengas TODOS los datos, genera ÚNICAMENTE este JSON. ESTÁ ESTRICTAMENTE
 
 const PORT = 5001;
 app.listen(PORT, () => {
-  console.log(`🚀 Modelo 1 encendido en http://localhost:${PORT}`);
+  console.log(`🚀 Modelos Duales encendidos en http://localhost:${PORT}`);
 });
