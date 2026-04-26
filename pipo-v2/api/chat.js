@@ -57,8 +57,7 @@ export default async function handler(req, res) {
   const systemPromptTriaje = `Eres Pipo, un Especialista de Triaje de Puebla.
 1. Sé empático y averigua: nombre, edad, sexo, municipio y síntomas.
 2. MIENTRAS recolectas datos, responde en texto natural.
-3. NUNCA MUESTRES JSON EN TUS RESPUESTAS.
-4. CUANDO TENGAS TODOS LOS DATOS, tu respuesta DEBE ser ÚNICAMENTE un objeto JSON, sin texto adicional, con esta estructura exacta:
+CUANDO TENGAS TODOS LOS DATOS, tu respuesta DEBE ser ÚNICAMENTE un objeto JSON, sin texto adicional, con esta estructura exacta:
 {
   "status": "finalizado",
   "expediente": {
@@ -66,7 +65,9 @@ export default async function handler(req, res) {
     "clinico": {"sintoma": "...", "evolucion": "...", "categoria": "URGENTE/MODERADO/LEVE"},
     "insight_puebla": "Advertencia médica basada en Puebla"
   }
-}`
+}
+NUNCA MUESTRES JSON EN TUS RESPUESTAS.
+`
 
   try {
     const chatCompletion = await groq.chat.completions.create({

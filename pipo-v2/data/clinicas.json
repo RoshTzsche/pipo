@@ -88,21 +88,6 @@
       "notas": "Baja afluencia actual. Excelente para derivaciones de triaje verde/ámbar en zona poniente."
     },
     {
-      "id": "PRIV-ANGELES",
-      "nombre": "Hospital Ángeles Puebla",
-      "tipo": "Privado",
-      "zona": "Residencial La Paz",
-      "direccion": "Blvd. del Niño Poblano 2510, La Paz, Puebla",
-      "coordenadas": {"lat": 19.0098, "lng": -98.2456},
-      "equipamiento": ["rayos_x", "resonancia", "tomografia", "urgencias_24h", "cirugia_avanzada", "terapia_intensiva"],
-      "ocupacion_porcentaje": 38,
-      "tiempos_espera": {"urgencias_min": 15, "consulta_externa_min": 25, "ultima_actualizacion": "2025-01-15T10:29:00Z"},
-      "disponibilidad": {"camas_totales": 110, "camas_disponibles": 68},
-      "saturacion": "bajo",
-      "contacto": {"telefono": "222-224-6700", "horario_urgencias": "24/7"},
-      "notas": "Alta disponibilidad y equipamiento completo. Costos particulares. Recomendado para triaje rojo con capacidad de pago/seguro."
-    },
-    {
       "id": "SSA-CS-NORIA",
       "nombre": "Centro de Salud La Noria",
       "tipo": "SSA",
