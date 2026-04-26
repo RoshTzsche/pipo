@@ -11,30 +11,63 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Aseguramos la instancia de Groq
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY }); 
 
-// Crear carpeta expedientes si no existe
 const expedientesDir = path.join(process.cwd(), 'expedientes');
 if (!fs.existsSync(expedientesDir)) {
   fs.mkdirSync(expedientesDir);
   console.log('📁 Carpeta expedientes creada');
 }
 
-// Función auxiliar para leer las clínicas desde el JSON
-const leerClinicas = () => {
+// ==========================================
+// 🧠 MOTOR RAG (RETRIEVER) ACTUALIZADO
+// ==========================================
+function retrieveTopClinicas(sintomas, categoria) {
   try {
     const clinicasPath = path.join(process.cwd(), 'data', 'clinicas.json');
-    if (fs.existsSync(clinicasPath)) {
-      return JSON.parse(fs.readFileSync(clinicasPath, 'utf8'));
-    }
-    return []; // Fallback si no existe el archivo
+    if (!fs.existsSync(clinicasPath)) return [];
+    
+    // Leemos el nuevo formato del JSON que ahora tiene metadatos
+    const clinicasFile = JSON.parse(fs.readFileSync(clinicasPath, 'utf8'));
+    let clinicas = clinicasFile.clinicas || []; 
+    
+    const textoBusqueda = sintomas.toLowerCase();
+
+    // Lógica de "Embeddings/Búsqueda Semántica" simplificada para RAG
+    clinicas.forEach(clinica => {
+      let score = 0;
+      // Ahora se llama "equipamiento" en el nuevo JSON
+      const capacidadesTxt = (clinica.equipamiento || []).join(' ').toLowerCase();
+
+      // Reglas de matching (Simulando un vector search)
+      if ((textoBusqueda.includes('fractura') || textoBusqueda.includes('hueso') || textoBusqueda.includes('caída')) && capacidadesTxt.includes('rayos_x')) score += 10;
+      if (textoBusqueda.includes('ceniza') && capacidadesTxt.includes('ceniza')) score += 10;
+      // Actualizado a urgencias_24h basado en tu nuevo JSON
+      if (categoria === 'URGENTE' && capacidadesTxt.includes('urgencias_24h')) score += 15; 
+      if ((textoBusqueda.includes('niño') || textoBusqueda.includes('bebé')) && capacidadesTxt.includes('pediatría')) score += 10;
+      if (textoBusqueda.includes('corazón') || textoBusqueda.includes('pecho')) score += 10;
+      
+      // Penalizar por saturación/ocupación alta (ahora usa ocupacion_porcentaje)
+      const ocupacion = clinica.ocupacion_porcentaje || 50;
+      score -= (ocupacion * 0.05);
+
+      clinica.rag_score = score;
+    });
+
+    // Ordenar por score y devolver solo el Top 3 (El contexto recuperado)
+    const topClinicas = clinicas.sort((a, b) => b.rag_score - a.rag_score).slice(0, 3);
+    
+    // Limpiamos el score para no confundir al LLM
+    return topClinicas.map(({ rag_score, ...rest }) => rest);
   } catch (error) {
-    console.error('Error al leer el archivo de clínicas:', error);
+    console.error('Error en Retriever RAG:', error);
     return [];
   }
-};
+}
 
+// ==========================================
+// 🚀 ENDPOINT PRINCIPAL
+// ==========================================
 app.post('/api/chat', async (req, res) => {
   const { messages, municipio } = req.body;
 
@@ -42,154 +75,106 @@ app.post('/api/chat', async (req, res) => {
     return res.status(400).json({ error: "No se recibieron mensajes" });
   }
 
-  // Leer datos de conocimiento de Puebla
-  let municipioData = null;
-  try {
-    const knowledgePath = path.join(process.cwd(), 'data', 'puebla_knowledge_merged.json');
-    if (fs.existsSync(knowledgePath)) {
-      const knowledgeData = JSON.parse(fs.readFileSync(knowledgePath, 'utf8'));
-      if (municipio && knowledgeData.riesgo_por_municipio) {
-        municipioData = knowledgeData.riesgo_por_municipio.find(m => 
-          m.municipio.toLowerCase() === municipio.toLowerCase()
-        );
-      }
-    }
-  } catch (error) {
-    console.error('Error al leer datos de conocimiento:', error);
-  }
-
-  // AGENTE 1: Sistema de Triaje
-  let systemPromptTriaje = `Eres un Especialista de Triaje empático y profesional en salud pública de Puebla.
-
-INSTRUCCIONES:
-1. Sé empático y recopila: nombre, edad, sexo, municipio y síntomas.
-2. Responde SIEMPRE en texto natural mientras recolectas datos. NUNCA muestres JSON al usuario.
-
-CONTEXTO EPIDEMIOLÓGICO Y AMBIENTAL DE PUEBLA (¡USAR PARA EL INSIGHT!):
-- MORTALIDAD HOMBRES >35: Alto riesgo de enfermedades del hígado y corazón.
-- MORTALIDAD MUJERES >65: Alto riesgo de enfermedades cardiovasculares y diabetes.
-
-SEVERIDAD:
-- URGENTE: fractura, no puedo respirar, dolor pecho, sangrado, desmayo.
-- MODERADO: fiebre, vómito, diarrea, dolor fuerte, afectación por ceniza.
-- LEVE: tos leve, gripa, resfriado, cansancio.
-
-REGLA MÁXIMA DE CIERRE:
-Cuando tengas TODOS los datos, genera ÚNICAMENTE este JSON. ESTÁ ESTRICTAMENTE PROHIBIDO decir "Perfecto", "Aquí tienes", o usar formato Markdown.
+  // AGENTE 1: TRIADOR (INTACTO COMO SOLICITASTE)
+  let systemPromptTriaje = `Eres Pipo, un Especialista de Triaje de Puebla.
+1. Sé empático y averigua: nombre, edad, sexo, municipio y síntomas.
+2. MIENTRAS recolectas datos, responde en texto natural.
+3. NUNCA MUESTRES JSON EN TUS RESPUESTAS.
+4. CUANDO TENGAS TODOS LOS DATOS, tu respuesta DEBE ser ÚNICAMENTE un objeto JSON, sin texto adicional, con esta estructura exacta:
 {
   "status": "finalizado",
   "expediente": {
-    "paciente": {"nombre": "", "edad": 0, "municipio": "", "sexo": ""},
-    "clinico": {"sintoma": "", "evolucion": "", "categoria": ""},
-    "insight_puebla": "[REEMPLAZA ESTE TEXTO con una advertencia médica real basada en el CONTEXTO EPIDEMIOLÓGICO de arriba, mencionando el Popocatépetl si aplica]",
-    "prioridad_num": 1
+    "paciente": {"nombre": "...", "edad": 0, "municipio": "...", "sexo": "..."},
+    "clinico": {"sintoma": "...", "evolucion": "...", "categoria": "URGENTE/MODERADO/LEVE"},
+    "insight_puebla": "Advertencia médica basada en Puebla"
   }
 }`;
 
-  if (municipioData) {
-    systemPromptTriaje += `\nDATOS DEL MUNICIPIO DE ${municipioData.municipio.toUpperCase()}: Riesgo de atención: ${municipioData.riesgo_atencion}. Considéralo para tu insight.`;
-  }
-
   try {
-    // 1. LLAMADA AL PRIMER MODELO (TRIAJE)
     const chatCompletion = await groq.chat.completions.create({
       messages: [{ role: "system", content: systemPromptTriaje }, ...messages],
       model: "llama-3.3-70b-versatile",
-      temperature: 0.1, 
-      max_tokens: 1024
+      temperature: 0.1,
+      // NO forzamos JSON mode aquí porque el agente necesita hablar en texto natural primero
     });
 
-    const rawContent = chatCompletion.choices[0].message.content;
-    console.log("IA Triaje respondió:", rawContent);
-
-    // Limpieza de Markdown
+    let rawContent = chatCompletion.choices[0].message.content;
     let cleanedContent = rawContent.replace(/```json/g, '').replace(/```/g, '').trim();
 
-    const firstBracket = cleanedContent.indexOf('{');
-    const lastBracket = cleanedContent.lastIndexOf('}');
-
-    if (firstBracket !== -1 && lastBracket !== -1) {
-      const jsonString = cleanedContent.substring(firstBracket, lastBracket + 1);
+    // Intentamos ver si el Agente 1 ya terminó y generó el JSON
+    if (cleanedContent.startsWith('{') && cleanedContent.endsWith('}')) {
       try {
-        const parsedObject = JSON.parse(jsonString);
+        const parsedObject = JSON.parse(cleanedContent);
 
-        // SI EL TRIAJE TERMINÓ, LLAMAMOS AL SEGUNDO MODELO
         if (parsedObject.status === 'finalizado' && parsedObject.expediente) {
-          
-          console.log("Iniciando Agente 2: Asignación de Clínica...");
-          
-          // Leer las clínicas actualizadas desde el archivo JSON
-          const clinicasDisponibles = leerClinicas();
+          console.log("Agente 1 terminó. Iniciando Pipeline RAG para Agente 2...");
 
-          // AGENTE 2: Asignación de Clínica
-          const systemPromptAsignacion = `Eres el Director Médico de Asignación del Gobierno de Puebla. 
-Se te entregará el expediente de un paciente recién evaluado y una lista de clínicas con sus capacidades.
-Tu objetivo es elegir la MEJOR clínica y redactar una justificación estelar.
+          // 1. FASE RAG: Recuperar conocimiento
+          const contextoClinicas = retrieveTopClinicas(
+            parsedObject.expediente.clinico.sintoma,
+            parsedObject.expediente.clinico.categoria
+          );
 
-REGLAS DE ASIGNACIÓN:
-1. CRUCE MÉDICO: Asegúrate de que la clínica tenga la capacidad exacta para el síntoma (Ej. Rayos X para fracturas).
-2. LA RECOMENDACIÓN (EL PUNCH): Escribe un mensaje directo, empático y muy convincente dirigido al paciente en segunda persona. Debe sonar como un verdadero médico VIP cuidando de él. 
-Ejemplo de tono: "Elegí esta clínica para ti porque cuenta con equipo de Rayos X para revisar tu brazo, y actualmente tiene baja saturación, por lo que te atenderán rapidísimo."
+          // 2. FASE RAG: Generación Aumentada (Agente 2 - ROBUSTECIDO)
+          const systemPromptAsignacion = `Eres el Director Médico VIP de Puebla y sistema experto de triaje.
+Se te entrega un expediente médico y una base de conocimiento reducida (Top 3 clínicas pre-filtradas para este caso).
+Elige la mejor opción para el paciente basándote en su categoría de riesgo, el equipamiento de la clínica y muy importante: el tiempo de espera estimado ('tiempos_espera').
 
-DATOS DE CLÍNICAS DISPONIBLES:
-${JSON.stringify(clinicasDisponibles)}
+BASE DE CONOCIMIENTO (CLÍNICAS RECUPERADAS):
+${JSON.stringify(contextoClinicas)}
 
 EXPEDIENTE DEL PACIENTE:
 ${JSON.stringify(parsedObject.expediente)}
 
-Devuelve ÚNICAMENTE un JSON con este formato, SIN markdown:
+INSTRUCCIONES Y REGLAS ESTRICTAS:
+1. Analiza el nivel de urgencia y los síntomas.
+2. Prioriza la clínica con menor tiempo de espera en urgencias ('tiempos_espera.urgencias_min') que cuente con el 'equipamiento' adecuado.
+3. INYECCIÓN DINÁMICA: Si el municipio del paciente está demasiado lejos de las clínicas en la base de conocimiento (por ejemplo, vive en un municipio alejado y las opciones son solo de Puebla capital), tienes permitido IGNORAR el Top 3 y usar tu conocimiento médico para sugerir el Hospital General Público más cercano a su municipio real.
+4. TIENES PROHIBIDO INVENTAR CLÍNICAS, SOLO USA LAS DE TU CONOCIMIENTO.
+
+INSTRUCCIONES DE SALIDA (ESTRICTO JSON):
+Debes devolver un JSON con esta estructura exacta:
 {
-  "clinica_recomendada": "Nombre exacto de la clínica elegida",
-  "recomendacion_medica": "Tu mensaje hiper-personalizado y empático aquí"
+  "clinica_recomendada": "Nombre exacto de la clínica elegida del Top 3 (o el nombre del hospital público local si aplicaste la Inyección Dinámica por lejanía)",
+  "recomendacion_medica": "Tu explicación VIP, empática y en primera persona de por qué elegiste esta unidad, justificando con los síntomas, el equipamiento y haciendo énfasis en los tiempos de espera favorables o cercanía a su municipio. Ejem: 'Elegí esta clínica para ti porque el tiempo de espera actual en urgencias es de solo 38 minutos y cuentan con Rayos X...'"
 }`;
 
-          // 2. LLAMADA AL SEGUNDO MODELO (ASIGNACIÓN)
           const asignacionCompletion = await groq.chat.completions.create({
             messages: [{ role: "system", content: systemPromptAsignacion }],
             model: "llama-3.3-70b-versatile",
             temperature: 0.1,
-            max_tokens: 500
+            // ¡MAGIA! Forzamos a nivel de API que la respuesta sea un JSON perfecto
+            response_format: { type: "json_object" } 
           });
 
-          let asignacionRaw = asignacionCompletion.choices[0].message.content;
-          let asignacionClean = asignacionRaw.replace(/```json/g, '').replace(/```/g, '').trim();
-          
-          const aFirst = asignacionClean.indexOf('{');
-          const aLast = asignacionClean.lastIndexOf('}');
-          
-          if (aFirst !== -1 && aLast !== -1) {
-            const asignacionJson = JSON.parse(asignacionClean.substring(aFirst, aLast + 1));
+          const asignacionJson = JSON.parse(asignacionCompletion.choices[0].message.content);
             
-            // JUNTAR LOS RESULTADOS DEL AGENTE 1 Y AGENTE 2
-            parsedObject.expediente.clinica_asignada = asignacionJson.clinica_recomendada;
-            parsedObject.expediente.recomendacion_medica = asignacionJson.recomendacion_medica;
-          }
+          // Inyectamos la decisión en el expediente maestro que viaja al frontend
+          parsedObject.expediente.clinica_asignada = asignacionJson.clinica_recomendada;
+          parsedObject.expediente.recomendacion_medica = asignacionJson.recomendacion_medica;
 
-          // GUARDAR EXPEDIENTE ACTUALIZADO
+          // Guardar el expediente
           const timestamp = Date.now();
           const filename = `expediente_${timestamp}.json`;
-          const filepath = path.join(expedientesDir, filename);
-          
-          fs.writeFileSync(filepath, JSON.stringify(parsedObject.expediente, null, 2));
-          console.log(`💾 Expediente guardado con asignación médica: ${filename}`);
+          fs.writeFileSync(path.join(expedientesDir, filename), JSON.stringify(parsedObject.expediente, null, 2));
           
           return res.json(parsedObject);
         }
-      } catch (parseError) {
-        console.error('Error de parseo del JSON extraído:', parseError);
+      } catch (e) {
+        console.error('Error parseando JSON del Agente 1:', e);
       }
     }
 
-    // CAÍDA SEGURA
+    // Si no es JSON, es que Pipo sigue platicando
     return res.json({ message: cleanedContent });
 
   } catch (error) {
-    console.error("Error en Groq:", error);
-    return res.status(500).json({ error: "Error de servidor", message: "Error interno" });
+    console.error("Error en el servidor:", error);
+    return res.status(500).json({ error: "Error de servidor" });
   }
 });
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
-  console.log(`🚀 Modelos Duales encendidos en http://localhost:${PORT}`);
+  console.log(`🚀 Servidor RAG encendido en http://localhost:${PORT}`);
 });

@@ -2,24 +2,13 @@ import React, { createContext, useContext, useState, useCallback } from 'react'
 
 const AppContext = createContext(null)
 
-/**
- * Vistas del flujo:
- *  - splash:    pantalla inicial con "Empezar" (solo al abrir la app)
- *  - chat:      vista principal con Pipo
- *  - cita:      cita agendada con calendario (después de triaje exitoso)
- *  - sin-cita:  no hay disponibilidad (después de triaje sin slot)
- *  - clinicas:  red de clínicas con mapa
- *
- * El modal QR es overlay, no una vista propia.
- */
-
 export function AppProvider({ children }) {
   const [currentView, setCurrentView] = useState('splash')
   const [menuOpen, setMenuOpen]       = useState(false)
   const [qrModalOpen, setQrModalOpen] = useState(false)
 
   const [expediente, setExpediente] = useState(null)
-  const [cita, setCita] = useState(null) // { fecha, hora, clinica, especialidad }
+  const [cita, setCita] = useState(null)
   const [historialExpedientes, setHistorialExpedientes] = useState([])
 
   const addExpediente = useCallback((nuevo) => {
@@ -37,8 +26,7 @@ export function AppProvider({ children }) {
   const intentarAgendarCita = useCallback((expedienteData) => {
     const categoria = expedienteData?.clinico?.categoria || 'LEVE'
 
-    // Probabilidad de éxito según severidad — URGENTE/MODERADO casi siempre,
-    // LEVE depende de saturación
+    // Probabilidad de éxito según severidad
     const pSuccess = categoria === 'URGENTE' ? 0.95
                    : categoria === 'MODERADO' ? 0.85
                    : 0.7
@@ -53,12 +41,14 @@ export function AppProvider({ children }) {
       citaDate.setDate(hoy.getDate() + diasOffset)
 
       const horas = ['09:00', '10:30', '11:15', '12:45', '14:00', '15:30', '16:45']
-      const clinicas = ['IMSS San José', 'UMF 8 Centro', 'HGZ 6 Angelópolis', 'UMF 20 Cholula']
+      
+      // AQUÍ OCURRE LA MAGIA: Extraemos la clínica que la IA nos sugirió
+      const clinicaRecomendada = expedienteData?.clinica_asignada || 'Clínica General'
 
       setCita({
         fecha: citaDate.toISOString(),
         hora: horas[Math.floor(Math.random() * horas.length)],
-        clinica: clinicas[Math.floor(Math.random() * clinicas.length)],
+        clinica: clinicaRecomendada, // ¡Se inyecta directo aquí!
         especialidad: categoria === 'URGENTE' ? 'Urgencias' : 'Medicina General'
       })
       return true
