@@ -46,8 +46,12 @@ body {
 
 /* Modo alto contraste */
 .high-contrast button,
+/* Modo alto contraste */
+.high-contrast {
+  filter: contrast(1.25);
+}
 .high-contrast .hc-target {
-  outline: 1px solid rgba(8, 8, 105, 0.3);
+  outline: px solid rgba(8, 8, 105, 0.3);
 }
 
 .leaflet-container {

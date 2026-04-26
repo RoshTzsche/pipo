@@ -155,41 +155,45 @@ export default function SettingsPanel({ onBack }) {
             ))}
           </div>
         </section>
+{/* === SECCIÓN: Alto contraste === */}
+<section>
+  <div className="flex items-center gap-2 mb-2">
+    <Sparkles className="w-4 h-4 text-[#080869]" strokeWidth={2.5} />
+    <h3 className="font-display font-black text-[#080869] text-sm uppercase tracking-wider">
+      Alto contraste
+    </h3>
+  </div>
+  <button
+    onClick={() => setHighContrast(prev => !prev)}
+    className={`w-full flex items-center justify-between gap-3 p-4 rounded-2xl border-[3px] transition-all ${
+      highContrast
+        ? 'bg-[#E6A231]/20 border-[#E6A231] shadow-[2px_2px_0px_#080869]'
+        : 'bg-white border-[#080869]/20'
+    }`}
+  >
+    <div className="text-left min-w-0">
+      <p className="font-display font-bold text-[#080869] text-sm">
+        Refuerza bordes y contornos
+      </p>
+      <p className="text-[10px] text-[#080869]/60 mt-0.5">
+        Útil para visión reducida
+      </p>
+    </div>
 
-        {/* === SECCIÓN: Alto contraste === */}
-        <section>
-          <div className="flex items-center gap-2 mb-2">
-            <Sparkles className="w-4 h-4 text-[#080869]" strokeWidth={2.5} />
-            <h3 className="font-display font-black text-[#080869] text-sm uppercase tracking-wider">
-              Alto contraste
-            </h3>
-          </div>
-          <button
-            onClick={() => setHighContrast(!highContrast)}
-            className={`w-full flex items-center justify-between p-4 rounded-2xl border-[3px] transition-all ${
-              highContrast
-                ? 'bg-[#E6A231]/20 border-[#E6A231] shadow-[2px_2px_0px_#080869]'
-                : 'bg-white border-[#080869]/20'
-            }`}
-          >
-            <div className="text-left">
-              <p className="font-display font-bold text-[#080869] text-sm">
-                Refuerza bordes y contornos
-              </p>
-              <p className="text-[10px] text-[#080869]/60 mt-0.5">
-                Útil para visión reducida
-              </p>
-            </div>
-            <div className={`relative w-11 h-6 rounded-full transition-colors ${
-              highContrast ? 'bg-[#080869]' : 'bg-[#080869]/20'
-            }`}>
-              <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
-                highContrast ? 'translate-x-5' : 'translate-x-0.5'
-              }`} />
-            </div>
-          </button>
-        </section>
-
+    {/* Toggle — shrink-0 evita que se salga del contenedor */}
+    <div
+      className={`relative shrink-0 w-11 h-6 rounded-full transition-colors duration-200 ${
+        highContrast ? 'bg-[#080869]' : 'bg-[#080869]/20'
+      }`}
+    >
+      <span
+        className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-200 ${
+          highContrast ? 'translate-x-5' : 'translate-x-0'
+        }`}
+      />
+    </div>
+  </button>
+</section>
         {/* === SECCIÓN: Acerca de === */}
         <section className="pt-2 pb-6">
           <div className="flex items-center gap-2 mb-2">
