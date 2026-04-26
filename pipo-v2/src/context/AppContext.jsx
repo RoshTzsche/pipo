@@ -2,11 +2,11 @@ import React, { createContext, useContext, useState, useCallback, useEffect } fr
 
 const AppContext = createContext(null)
 
-// Mapa de escalas de fuente
-const FONT_SCALE_MAP = {
-  normal: 1,
-  grande: 1.15,
-  'extra-grande': 1.3
+// Mapa de tamaño base del html (Tailwind usa rem → escala todo)
+const FONT_SIZE_MAP = {
+  'normal':       '16px',
+  'grande':       '18px',
+  'extra-grande': '21px'
 }
 
 export function AppProvider({ children }) {
@@ -19,14 +19,17 @@ export function AppProvider({ children }) {
   const [historialExpedientes, setHistorialExpedientes] = useState([])
 
   // === AJUSTES DE ACCESIBILIDAD ===
-  const [fontSize, setFontSize] = useState('normal')          // 'normal' | 'grande' | 'extra-grande'
-  const [colorBlindMode, setColorBlindMode] = useState('ninguno') // 'ninguno' | 'protanopia' | 'deuteranopia' | 'tritanopia'
+  const [fontSize, setFontSize] = useState('normal')
+  const [colorBlindMode, setColorBlindMode] = useState('ninguno')
   const [highContrast, setHighContrast] = useState(false)
 
-  // Aplicamos la escala de fuente como variable CSS al :root
+  // Cambia el font-size del <html> para que todos los rem de Tailwind escalen
   useEffect(() => {
-    const scale = FONT_SCALE_MAP[fontSize] || 1
-    document.documentElement.style.setProperty('--font-scale', String(scale))
+    document.documentElement.style.fontSize = FONT_SIZE_MAP[fontSize] || '16px'
+    // Limpieza al desmontar (por si acaso)
+    return () => {
+      document.documentElement.style.fontSize = ''
+    }
   }, [fontSize])
 
   const addExpediente = useCallback((nuevo) => {
@@ -40,17 +43,14 @@ export function AppProvider({ children }) {
     return expedienteConId
   }, [])
 
-  // Simula búsqueda de cita: si hay clínica con saturación <75% para esa categoría
   const intentarAgendarCita = useCallback((expedienteData) => {
     const categoria = expedienteData?.clinico?.categoria || 'LEVE'
 
-    // Probabilidad de éxito según severidad
     const pSuccess = categoria === 'URGENTE' ? 0.95
                    : categoria === 'MODERADO' ? 0.85
                    : 0.7
 
     if (Math.random() < pSuccess) {
-      // Generar fecha y hora plausible
       const hoy = new Date()
       const diasOffset = categoria === 'URGENTE' ? 0
                        : categoria === 'MODERADO' ? Math.floor(Math.random() * 2) + 1
@@ -59,14 +59,12 @@ export function AppProvider({ children }) {
       citaDate.setDate(hoy.getDate() + diasOffset)
 
       const horas = ['09:00', '10:30', '11:15', '12:45', '14:00', '15:30', '16:45']
-      
-      // AQUÍ OCURRE LA MAGIA: Extraemos la clínica que la IA nos sugirió
       const clinicaRecomendada = expedienteData?.clinica_asignada || 'Clínica General'
 
       setCita({
         fecha: citaDate.toISOString(),
         hora: horas[Math.floor(Math.random() * horas.length)],
-        clinica: clinicaRecomendada, // ¡Se inyecta directo aquí!
+        clinica: clinicaRecomendada,
         especialidad: categoria === 'URGENTE' ? 'Urgencias' : 'Medicina General'
       })
       return true
